@@ -1,0 +1,114 @@
+$ git log --stat | cat
+commit 58116b801421a4327aa514e96d8f6cd78473cb4b
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 19:49:27 2023 +0200
+
+    tehtävä 11 commit
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit df4b82dc4e5ca1e6758b30ee190bed0f253a2900
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 19:41:52 2023 +0200
+
+    lisätty file 1 2 3
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit dd84a79556b83f3afd70127c3d3006e622165c5a
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 19:21:45 2023 +0200
+
+    lisäyksiä ja poistoja txt
+
+ eka.txt    | 6 +-----
+ kolmas.txt | 6 +++++-
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+commit 57b5ca92917718a5a17b9dba3d3ccdc65eb7645e
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 19:17:49 2023 +0200
+
+    mv poistaa vanhan tiedoston ja tekee uuden uudella nimellä
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 7b63b78f00a375b820dfd659d3d37a7d121737fe
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 19:01:46 2023 +0200
+
+    poistettu toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 56515d0500d974f93711a2abade284d3ec7a2b45
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 18:58:50 2023 +0200
+
+    poistettu ja lisätty tekstiä
+
+ tiedosto.txt | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+commit f7b46d78df63441c24dc16aa3506301679dc4c56
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 18:55:48 2023 +0200
+
+    lisätty paljon tekstiä
+
+ tiedosto.txt | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+commit abf74b276002941c5795a9d93720c0492eef591f
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 18:38:54 2023 +0200
+
+    "lisätty stuff"
+
+ stuff/jokintiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2731fb3ae647cdbb614958489a4859c3e6aacedf
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 18:32:11 2023 +0200
+
+    Testi vscode kommentti
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 1e4fe544ed05afedc3d435ff0b7f397dff9437b7
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 18:30:34 2023 +0200
+
+    lisätty kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit db597b72be42d03ace640d6c240cb327c91c3ada
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 18:25:35 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 3 +++
+ toinen.txt   | 0
+ 2 files changed, 3 insertions(+)
+
+commit a32ed1b7b012476566b9919861c92598ecb2f300
+Author: Atte Sanasvuori <atte.sanasvuori@helsinki.fi>
+Date:   Sun Mar 19 18:16:04 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
