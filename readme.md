@@ -12,4 +12,6 @@ Viikon 1 tehtävät tehty windows koneella, eli tree komennon tulostus saattaa o
 Viikon 2 tehtävissä ei kummempaa kummallisuutta.
 
 *Linkit:*
-[coverage report screenshot]()
+[coverage report screenshot](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko2/coverage_report_screenshot.PNG)
+[Työaikakirjanpito](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
+[Alustava määrittelydokumentti](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
