@@ -9,8 +9,8 @@ Viikon 1 tehtävät tehty windows koneella, eli tree komennon tulostus saattaa o
 
 **Viikko 2**
 
-Viikon 2 tehtävissä ei kummempaa kummallisuutta. 
-Jostain syystä githubissa ei enää toimi rivinvaihdot jos painaa vain yhden kerran enteriä. Yritin tutkia miksi mutta ei vielä ainakaan löytynyt mitään korjausta tuohon.
+Viikon 2 tehtävissä ei kummempaa kummallisuutta.  
+Jostain syystä githubissa ei enää toimi rivinvaihdot jos painaa vain yhden kerran enteriä. Yritin tutkia miksi mutta ei vielä ainakaan löytynyt mitään korjausta tuohon. Ilmeisesti johtuu md tiedostopäätteestä ja pitää vaan käsin syöttää kaksi välilyöntiä aina rivinvaihtoon.
 
 *Linkit:*
 [coverage report screenshot](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko2/coverage_report_screenshot.PNG) ja 
