@@ -7,6 +7,7 @@ Laitteita voi liittää projektiin ja sovellus luo listan laitteiden vaatimista 
 ## Käyttäjät
 Sovellusta voi käyttää kuka tahansa.
 *Jatkokehitysidea*
+
 Sovelluksen tiedot voi lukita käyttäjätunnuksen/salasanan avulla.
 
 ## Käyttöliittymäluonnos
@@ -26,6 +27,7 @@ Tiedot näkymässä voi lisätä sovellukseen uusia laitteita tai muokata aiemmi
 -Sovellus mahdollistaa laitteiden yhdistämisen kokonaisuuksiksi.
 
 *Jatkokehitysideoita*
+
 Jos aikaa riittää, voi tästä listasta lisätä toimintoja sovellukseen.
 -Laitteita voi yhdistella ala-asemien alle.
 -Sovellukseen tallennettujen laitteiden tallennus tietokantaan.
