@@ -1,15 +1,15 @@
-#Rakennusautomaation laite ja pistetyökalu vaatimusmäärittely
+# Rakennusautomaation laite ja pistetyökalu vaatimusmäärittely
 
-##Sovelluksen tarkoitus
+## Sovelluksen tarkoitus
 Sovelluksella on mahdollista hallinnoida rakennusautomaatioprojektiin tarvittavia rakennusautomaation laitteita.
 Laitteita voi liittää projektiin ja sovellus luo listan laitteiden vaatimista automaation pisteistä.
 
-##Käyttäjät
+## Käyttäjät
 Sovellusta voi käyttää kuka tahansa.
 *Jatkokehitysidea*
 Sovelluksen tiedot voi lukita käyttäjätunnuksen/salasanan avulla.
 
-##Käyttöliittymäluonnos
+## Käyttöliittymäluonnos
 Sovelluksessa on päänäkymä, josta pääsee sivunäkymiin. Päänäkymässä on pistelista, laitelista.
 Päänäkymästä pääsee sivunäkymiin painikkeilla/pudotusvalikoilla: PROJEKTI LISÄÄ VIE TIEDOT
 Projektinäkymässä voi valita avattavan projektin.
@@ -17,7 +17,7 @@ Lisäysnäkymässä voi lisätä laitteita tai kokonaisuuksia projektiin.
 Vientinäkymässä voi viedä pisteet/laitteet/yms tiedostoon.
 Tiedot näkymässä voi lisätä sovellukseen uusia laitteita tai muokata aiemmin lisättyjä.
 
-##Suunnitellut toiminnallisuudet
+## Suunnitellut toiminnallisuudet
 -Projektin tietojen tallennus tiedostoon.
 -Käyttäjä voi lisätä sovellukseen erilaisia laitteita.
 -Käyttäjä voi määritellä laitteen ominaisuudet, kuten: nimi, pisteet, kuva, valmistaja ja viittaus dokumentaatioon.
