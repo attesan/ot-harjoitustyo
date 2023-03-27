@@ -1,2 +1,5 @@
 .pytest_cashe
 __pycache__
+.coverage
+htmlcov
+
