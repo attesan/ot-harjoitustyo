@@ -6,6 +6,7 @@ Laitteita voi liittää projektiin ja sovellus luo listan laitteiden vaatimista 
 
 ## Käyttäjät
 Sovellusta voi käyttää kuka tahansa.
+
 *Jatkokehitysidea*
 
 Sovelluksen tiedot voi lukita käyttäjätunnuksen/salasanan avulla.
