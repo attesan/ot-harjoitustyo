@@ -5,7 +5,7 @@ Sovelluksella on mahdollista hallinnoida rakennusautomaatioprojektiin tarvittavi
 Laitteita voi liittää projektiin ja sovellus luo listan laitteiden vaatimista automaation pisteistä.
 
 ## Käyttäjät
-Sovellusta voi käyttää kuka tahansa.
+Sovellusta voi käyttää kuka tahansa. 
 
 *Jatkokehitysidea*
 
