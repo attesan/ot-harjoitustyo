@@ -2,7 +2,7 @@
 Monopoli
 ---
 classDiagram  
-    pelinappula -->> pelaaja  
+    pelinappula <|-- pelaaja  
     pelinappula --> ruutu  
     noppa -> pelaaja  
     ruutu -> seuraava_ruutu  
