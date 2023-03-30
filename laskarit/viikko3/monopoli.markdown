@@ -1,3 +1,4 @@
+```mermaid  
 classDiagram  
     pelinappula "1" <-- "1" pelaaja  
     pelaaja "2..8" -- "1" peli  
@@ -33,3 +34,4 @@ class kortti{
 class ruutu{  
     +seuraava_ruutu  
 }  
+```
