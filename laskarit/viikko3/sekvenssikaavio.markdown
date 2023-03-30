@@ -21,7 +21,9 @@ sequenceDiagram
     __engine -->> kone: True
     kone ->> __engine: use_energy()
     __engine ->> __tank: consume(10)
+    activate __tank
     __tank -->> __engine: None
+    deactivate __tank
     __engine -->> kone: None
     kone -->> main: None
 ```
