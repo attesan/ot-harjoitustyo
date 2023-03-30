@@ -1,5 +1,5 @@
 
-flowchart TD
+flowchart TD  
 	pelinappula -->> pelaaja  
 	pelinappula --> ruutu  
 	noppa -> pelaaja  
