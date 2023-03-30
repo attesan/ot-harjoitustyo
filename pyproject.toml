@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "automaatio laite ja pistetyökalu"
+version = "0.1.0"
+description = "Laitteiden ja pisteiden hallintaan"
+authors = ["Atte Sanasvuori <atte.sanasvuori@helsinki.fi>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+invoke = "^2.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
