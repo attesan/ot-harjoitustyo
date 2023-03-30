@@ -21,7 +21,8 @@ Jostain syystä githubissa ei enää toimi rivinvaihdot jos painaa vain yhden ke
   
 Viikon 3 tehtävissä sekvenssikaavioiden paluuarvoihin lisätty None jos ei palauta mitään. Ilman mitään tekstiä nuolet oli aivan kiinni toisissaan. Näin vähän paremman näköinen.  
   
-[monopoli](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.markdown)  
-[kone-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaavio.markdown)  
-[HSL-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/HSLsekvenssikaavio.markdown)  
+*Linkit:* 
+[monopoli](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.markdown) ja
+[kone-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaavio.markdown) ja 
+[HSL-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/HSLsekvenssikaavio.markdown) ja 
 [changelog](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)  
