@@ -1,6 +1,6 @@
 ---
 Monopoli
 ---
-classDiagram  
-    pelinappula <|-- pelaaja  
-    pelinappula --> ruutu  
+classDiagram
+    pelinappula <|-- pelaaja
+    pelinappula --> ruutu
