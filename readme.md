@@ -16,3 +16,12 @@ Jostain syystä githubissa ei enää toimi rivinvaihdot jos painaa vain yhden ke
 [coverage report screenshot](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko2/coverage_report_screenshot.PNG) ja 
 [Työaikakirjanpito](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md) ja 
 [Alustava määrittelydokumentti](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
+  
+**Viikko 3**
+  
+Viikon 3 tehtävissä sekvenssikaavioiden paluuarvoihin lisätty None jos ei palauta mitään. Ilman mitään tekstiä nuolet oli aivan kiinni toisissaan. Näin vähän paremman näköinen.  
+  
+[monopoli](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.markdown)  
+[kone-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaavio.markdown)  
+[HSL-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/HSLsekvenssikaavio.markdown)  
+[changelog](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)  
