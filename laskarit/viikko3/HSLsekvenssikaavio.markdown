@@ -1,4 +1,4 @@
-```markdown
+```mermaid
 sequenceDiagram
     main ->> laitehallinto: HKLLaitehallinto()
     laitehallinto -->> main: None
