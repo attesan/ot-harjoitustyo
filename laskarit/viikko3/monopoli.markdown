@@ -1,5 +1,5 @@
 ---
-Monopoli
+title: Monopoli
 ---
 classDiagram  
 	pelinappula -->> pelaaja  
