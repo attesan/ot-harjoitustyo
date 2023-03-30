@@ -1,4 +1,4 @@
-```Mermaid
+```mermaid
 sequenceDiagram
     main ->> kone: Machine()
     kone ->> __tank: FuelTank()
