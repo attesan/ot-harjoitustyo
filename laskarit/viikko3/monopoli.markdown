@@ -1,7 +1,8 @@
-
-flowchart TD;  
-	pelinappula -->> pelaaja;  
-	pelinappula --> ruutu;  
-	noppa -> pelaaja;  
-	ruutu -> seuraava_ruutu;  
-
+---
+Monopoli
+---
+classDiagram  
+	pelinappula -->> pelaaja  
+	pelinappula --> ruutu  
+	noppa -> pelaaja  
+	ruutu -> seuraava_ruutu  
