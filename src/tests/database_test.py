@@ -1,10 +1,10 @@
 import unittest
 import os
-from initialize_database import InitializeDatabase
+import initialize_database
 
 class TestInitializeDatabase(unittest.TestCase):
     def setUp(self):
-        devices = InitializeDatabase.initialize_database()
+        self.devices = initialize_database.initialize_database()
 
     def test_create(self):
         pass
