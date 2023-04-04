@@ -1,7 +1,8 @@
 # TYÖAIKAKIRJANPITO 2023  
   
-yhteensä: 17h  
+yhteensä: 20h  
   
+ 4.4. 3 h SQLite tietokannan luominen onnistuu, korjailtu SQLite luokkia, testejä ei vielä saatu toimimaan jonkin virheilmoituksen johdosta. Luotu pohja ympäristömuuttujien käytölle.  
  2.4. 4 h SQLite selvittelyä ja SQLite rakenteen miettiminen. SQLite luokat. Ei testattu.  
  1.4. 5 h tkinter opettelua, korjattu kaikki mitä tehty eilen, uusi laite -ikkuna ja vaihto ikkunoiden välillä. Testaus.  
 31.3. 5 h tkinter opettelua ja pääikkunan teko.  
