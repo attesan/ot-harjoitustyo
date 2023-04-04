@@ -1,28 +1,7 @@
-# Ohjelmistotuotanto -kurssin readme
-**Viikko 1**
+# RAU laite ja pistetyökalu
 
-Viikon 1 tehtävät tehty windows koneella, eli tree komennon tulostus saattaa olla *vähän* poikkeava. Tehtävässä 17 ei tullut tuota mallin mukaista ilmoitusta, eli pull tuli ihan normaalisti läpi.
+Työkalulla on mahdollista pitää kirjaa projektiin tarvittavista laitteista ja niiden tarvitsemista pisteistä.
 
-*Linkit:*
-[komentorivi.txt](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt) ja 
-[gitlog.txt](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+Ohjelma on vielä aika raakile, viikko on mennyt isoksi osaksi opettelussa ja erinäisten ongelmien selvittelyssä.
 
-**Viikko 2**
-
-Viikon 2 tehtävissä ei kummempaa kummallisuutta.  
-Jostain syystä githubissa ei enää toimi rivinvaihdot jos painaa vain yhden kerran enteriä. Yritin tutkia miksi mutta ei vielä ainakaan löytynyt mitään korjausta tuohon. Ilmeisesti johtuu md tiedostopäätteestä ja pitää vaan käsin syöttää kaksi välilyöntiä aina rivinvaihtoon.
-
-*Linkit:*
-[coverage report screenshot](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko2/coverage_report_screenshot.PNG) ja 
-[Työaikakirjanpito](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md) ja 
-[Alustava määrittelydokumentti](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
-  
-**Viikko 3**
-  
-Viikon 3 tehtävissä sekvenssikaavioiden paluuarvoihin lisätty None jos ei palauta mitään. Ilman mitään tekstiä nuolet oli aivan kiinni toisissaan. Näin vähän paremman näköinen.  
-  
-*Linkit:* 
-[monopoli](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/monopoli.markdown) ja
-[kone-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/sekvenssikaavio.markdown) ja 
-[HSL-sekvenssikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/laskarit/viikko3/HSLsekvenssikaavio.markdown) ja 
-[changelog](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)  
+*Linkit:* [changelog](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)  
