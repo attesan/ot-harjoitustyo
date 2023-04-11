@@ -45,11 +45,10 @@ def drop_tables(connection):
     connection.commit()
 
 # Drop all tables and make new ones
-def initialize_database():  
+def initialize_database():
     connection = get_database_connection()
     drop_tables(connection)
     create_tables(connection)
-
 
 if __name__ == "__main__":
     initialize_database()

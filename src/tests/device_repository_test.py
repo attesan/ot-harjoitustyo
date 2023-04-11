@@ -10,7 +10,8 @@ class TestDeviceRepository(unittest.TestCase):
         self.d = DeviceRepository()
         self.d.delete_all()
 
-        # Note to self, create class for device handling
+        # Note to self, create class for device handling!
+        # Note to self, add tests for points and device data!
         self.device1 = ("model1", "manufacturer1",[("point11","text11","type11"),("point12","text12","type12"),("point13","text13","type13"),("point14","text14","type14")])
         self.device2 = ("model2", "manufacturer2",[("point21","text21","type21"),("point22","text22","type22"),("point23","text23","type23"),("point24","text24","type24")])
 

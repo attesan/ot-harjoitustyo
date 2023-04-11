@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 from database_connection import get_database_connection
 
 
@@ -23,11 +22,13 @@ class DeviceRepository:
 
         # Add points to DevicePoints -table
         # For now device_points is a list of point-data tuples (device_id, point_name, point_type)
-        for p in device_points:
-            if p[0] != None:
+        for point in device_points:
+            if point[0] is not None:
                 cursor.execute(
-                    "insert into DevicePoints (device_id, point_name, point_text, point_type) values (?, ?, ?, ?)",
-                    (device_id, p[0], p[1], p[2])
+                    """insert into DevicePoints 
+                    (device_id, point_name, point_text, point_type) 
+                    values (?, ?, ?, ?)""",
+                    (device_id, point[0], point[1], point[2])
                 )
 
     # Search for device by model name
@@ -62,3 +63,4 @@ class DeviceRepository:
         cursor.execute("delete from Devices")
         cursor.execute("delete from DevicePoints")
         cursor.execute("delete from DeviceData")
+        
