@@ -48,6 +48,17 @@ class DeviceRepository:
             "select * from devices"
         ).fetchall()
 
+    # Get all points related to a device
+    def find_device_points(self, search_word):
+        cursor = self._connection.cursor()
+
+        return cursor.execute(
+            """select DP.point_name, DP.point_text, DP.point_type 
+            from DevicePoints DP, Devices D 
+            where D.id = DP.device_id and D.model = ?"""
+            , (search_word,)
+        ).fetchall()
+    
     # Not implemented yet
     def delete_device(self):
         pass

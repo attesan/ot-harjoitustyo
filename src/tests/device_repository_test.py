@@ -13,7 +13,7 @@ class TestDeviceRepository(unittest.TestCase):
         # Note to self, create class for device handling!
         # Note to self, add tests for points and device data!
         self.device1 = ("model1", "manufacturer1",[("point11","text11","type11"),("point12","text12","type12"),("point13","text13","type13"),("point14","text14","type14")])
-        self.device2 = ("model2", "manufacturer2",[("point21","text21","type21"),("point22","text22","type22"),("point23","text23","type23"),("point24","text24","type24")])
+        self.device2 = ("model2", "manufacturer2",[("point21","text21","type21")])
 
     def test_add_device(self):
         self.d.new_device(self.device1[0],self.device1[1],self.device1[2])
@@ -55,3 +55,15 @@ class TestDeviceRepository(unittest.TestCase):
         result = self.d.find_all_devices()
         
         self.assertEqual(len(result), 0)
+
+    def test_points_added_correctly_one(self):
+        self.d.new_device(self.device2[0],self.device2[1],self.device2[2])
+        result = self.d.find_device_points("model2")
+
+        self.assertEqual(len(result), 1)
+
+    def test_points_added_correctly_many(self):
+        self.d.new_device(self.device1[0],self.device1[1],self.device1[2])
+        result = self.d.find_device_points("model1")
+
+        self.assertEqual(len(result), 4)
