@@ -1,5 +1,9 @@
+import os
+import sys
+from repository.device_repository import DeviceRepository
 from tkinter import ttk, constants
 
+sys.path.insert(0, os.path.abspath(".."))
 
 class NewDevice:
     # This view lets the user create new devices into the program database. These can then be added to project.
@@ -7,6 +11,7 @@ class NewDevice:
         self._root = root
         self._frame = None
         self._handle_main_window = handle_main_window
+        self._devices = DeviceRepository()
         self._initialize()
 
     def _initialize(self):
@@ -26,7 +31,8 @@ class NewDevice:
         self.device_point_name_field3 = ttk.Entry(master=self._frame)
         self.device_point_name_field4 = ttk.Entry(master=self._frame)
 
-        self.save_button = ttk.Button(master=self._frame, text="Tallenna")
+        self.save_button = ttk.Button(master=self._frame, text="Tallenna", 
+            command=self.handle_new_device())
         self.close_button = ttk.Button(
             master=self._frame, text="Peruuta", command=self._handle_main_window)
 
@@ -44,6 +50,16 @@ class NewDevice:
         self.device_point_name_field4.grid(row=4, column=1)
         self.save_button.grid(row=5, column=0)
         self.close_button.grid(row=5, column=1)
+
+    def handle_new_device(self):
+        name = self.device_name_field.get()
+        manufacturer = self.device_made_by_field.get()
+        point1 = self.device_point_name_field1.get()
+        point2 = self.device_point_name_field2.get()
+        point3 = self.device_point_name_field3.get()
+        point4 = self.device_point_name_field4.get()
+
+        self._devices.new_device(name, manufacturer, [point1,point2,point3,point4])
 
     def destroy(self):
         self._frame.destroy()

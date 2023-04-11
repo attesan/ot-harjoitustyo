@@ -23,13 +23,15 @@ class DeviceRepository:
         # Add points to DevicePoints -table
         # For now device_points is a list of point-data tuples (device_id, point_name, point_type)
         for point in device_points:
-            if point[0] is not None:
+            if point is not None and len(point) > 2:
                 cursor.execute(
                     """insert into DevicePoints 
                     (device_id, point_name, point_text, point_type) 
                     values (?, ?, ?, ?)""",
                     (device_id, point[0], point[1], point[2])
                 )
+        
+        self._connection.commit()
 
     # Search for device by model name
     def search_by_model(self, search_word):

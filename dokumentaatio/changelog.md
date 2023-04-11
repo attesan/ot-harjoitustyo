@@ -6,6 +6,7 @@ Lisätty testipohja ja pytest, testejä ei voi vielä ajaa virheen johdosta.
   
 # Viikko 4  
 Testit saatu toimimaan vihdoinkin. Tehty testejä device_repository luokille.  
+Käyttäjä voi lisätä laitteita tietokantaa 'lisää laite tietokantaan' -ikkunassa.  
 Toteutettu device_repository luokista suurin osa.  
 Muutettu tietokannan taulujen nimiä selkeämmiksi, lisätty pisteen selite tekstille kolumni.  
 Korjattu ongelmia jotka esti itse ohjelmoinnin etenemisen, mm. viittaukset ei toimineet.  
