@@ -8,7 +8,8 @@ sys.path.insert(0, os.path.abspath(".."))
 
 class TestDeviceDatabase(unittest.TestCase):
     def setUp(self):
-        pass
+        self.d = DeviceRepository()
 
-    def test_create(self):
-        pass
+    def test_database_exists(self):
+        print("testi",os.path)
+        self.assertEqual(os.path.exists("../data/devices.db"), True)

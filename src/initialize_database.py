@@ -1,6 +1,10 @@
+import os
+import sys
 from database_connection import get_database_connection  # From materials
 
+sys.path.insert(0, os.path.abspath(".."))
 
+# Create device, point and data tables in the database
 def create_tables(connection):
     cursor = connection.cursor()
 
@@ -30,7 +34,7 @@ def create_tables(connection):
 
     connection.commit()
 
-# Clear data in tables
+# Drop all tables
 def drop_tables(connection):
     cursor = connection.cursor()
     cursor.execute("drop table if exists Devices;")
@@ -38,7 +42,7 @@ def drop_tables(connection):
     cursor.execute("drop table if exists DeviceData;")
     connection.commit()
 
-# Drop tables and make new ones
+# Drop all tables and make new ones
 def initialize_database():  
     connection = get_database_connection()
     drop_tables(connection)
