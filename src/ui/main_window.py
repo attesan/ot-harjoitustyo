@@ -1,7 +1,8 @@
 from tkinter import ttk, constants, Menu
 
+
 class MainView:
-    #Primary view of the program
+    # Primary view of the program
     def __init__(self, root, handle_new_device):
         self._root = root
         self._frame = None
@@ -11,24 +12,36 @@ class MainView:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
-        self.top_menu = Menu(self._frame) #Top edge menu bar that contains dropdown menus
+        # Top edge menu bar that contains dropdown menus
+        self.top_menu = Menu(self._frame)
 
-        self.dropdown_menu_add = Menu(master=self.top_menu, tearoff=0) #These are the dropdown menus visible on top_menu
-        self.dropdown_menu_add.add_command(label="Laite projektiin", command=NotImplemented)
-        self.dropdown_menu_add.add_command(label="Testi", command=NotImplemented)
+        # These are the dropdown menus visible on top_menu
+        self.dropdown_menu_add = Menu(master=self.top_menu, tearoff=0)
+        self.dropdown_menu_add.add_command(
+            label="Laite projektiin", command=NotImplemented)
+        self.dropdown_menu_add.add_command(
+            label="Testi", command=NotImplemented)
 
         self.dropdown_menu_project = Menu(master=self.top_menu, tearoff=0)
-        self.dropdown_menu_project.add_command(label="Tallenna", command=NotImplemented)
-        self.dropdown_menu_project.add_command(label="Avaa projekti", command=NotImplemented)
-        self.dropdown_menu_project.add_command(label="Vie CSV", command=NotImplemented)
+        self.dropdown_menu_project.add_command(
+            label="Tallenna", command=NotImplemented)
+        self.dropdown_menu_project.add_command(
+            label="Avaa projekti", command=NotImplemented)
+        self.dropdown_menu_project.add_command(
+            label="Vie CSV", command=NotImplemented)
 
         self.dropdown_menu_data = Menu(master=self.top_menu, tearoff=0)
-        self.dropdown_menu_data.add_command(label="Lisää laite tietokantaan", command=self._handle_new_device)
-        self.dropdown_menu_data.add_command(label="Muokkaa tietokannan laitetta", command=NotImplemented)
+        self.dropdown_menu_data.add_command(
+            label="Lisää laite tietokantaan", command=self._handle_new_device)
+        self.dropdown_menu_data.add_command(
+            label="Muokkaa tietokannan laitetta", command=NotImplemented)
 
-        self.top_menu.add_cascade(label="Projekti", menu=self.dropdown_menu_project) #Add different dropdown menus to top menu bar
+        # Add different dropdown menus to top menu bar
+        self.top_menu.add_cascade(
+            label="Projekti", menu=self.dropdown_menu_project)
         self.top_menu.add_cascade(label="Lisää", menu=self.dropdown_menu_add)
-        self.top_menu.add_cascade(label="Tietokanta", menu=self.dropdown_menu_data)
+        self.top_menu.add_cascade(
+            label="Tietokanta", menu=self.dropdown_menu_data)
 
         self.devices_label = ttk.Label(master=self._frame, text="Laitteet")
         self.points_label = ttk.Label(master=self._frame, text="Pisteet")

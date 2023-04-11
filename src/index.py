@@ -6,6 +6,7 @@ from initialize_database import initialize_database
 
 sys.path.insert(0, os.path.abspath(".."))
 
+
 def main():
     window = Tk()
     window.title("RAU laite ja pistesovellus")
@@ -15,6 +16,7 @@ def main():
     main_ui = UI(window)
     main_ui.start()
     window.mainloop()
+
 
 if __name__ == "__main__":
     main()
