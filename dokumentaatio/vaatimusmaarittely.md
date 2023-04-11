@@ -1,4 +1,4 @@
-winptywinptywinptywinptywinptywinpty# Rakennusautomaation laite ja pistetyökalu vaatimusmäärittely
+# Rakennusautomaation laite ja pistetyökalu vaatimusmäärittely
 
 ## Sovelluksen tarkoitus
 Sovelluksella on mahdollista hallinnoida rakennusautomaatioprojektiin tarvittavia rakennusautomaation laitteita.  
