@@ -1,6 +1,10 @@
+import os
+import sys
 from tkinter import Tk
 from ui.ui import UI
 from initialize_database import initialize_database
+
+sys.path.insert(0, os.path.abspath(".."))
 
 def main():
     window = Tk()
@@ -8,8 +12,8 @@ def main():
 
     initialize_database()
 
-    ui = UI(window)
-    ui.start()
+    main_ui = UI(window)
+    main_ui.start()
     window.mainloop()
 
 if __name__ == "__main__":
