@@ -6,36 +6,31 @@ def create_tables(connection):
 
     # Device model and manufacturer in this table
     cursor.execute(
-        '''create table Devices 
+        """create table Devices 
         (id integer primary key, 
         model text, 
-        manufacturer text) 
-        if not exists Devices;''')
+        manufacturer text);""")
 
     # Points related to device go here, identified by Device_id, type is for possible future use
-    # and will be limited to following: DI,DO,AI,AO,FDI,FDO,FAI,FAO
+    # for example: DI,DO,AI,AO,FDI,FDO,FAI,FAO
     cursor.execute(
-        '''create table DevicePoints 
+        """create table DevicePoints 
         (id integer primary key, 
         device_id integer, 
-        pointname text, type text) 
-        if not exists DevicePoints;''')
+        pointname text, type text);""")
 
     # For possible future use, here you can save device data such as voltage, amps, power,
-    # reaction time, dimensions, k-value, etc. You can also save a text key to help explain
-    # the who-knows-what-that-is that is in data_value
+    # reaction time, dimensions, k-value, etc. You can also save a text key to explain
+    # the who-knows-what that is that is in data_value column
     cursor.execute(
-        '''create table DeviceData (id integer primary key, 
+        """create table DeviceData (id integer primary key, 
         device_id integer, 
         data_value real, 
-        data_information text) 
-        if not exists DevicePoints;''')
+        data_information text);""")
 
     connection.commit()
 
-    # Clear data in tables
-
-
+# Clear data in tables
 def drop_tables(connection):
     cursor = connection.cursor()
     cursor.execute("drop table if exists Devices;")
@@ -43,9 +38,10 @@ def drop_tables(connection):
     cursor.execute("drop table if exists DeviceData;")
     connection.commit()
 
-
-def initialize_database():  # Get database connection
+# Drop tables and make new ones
+def initialize_database():  
     connection = get_database_connection()
+    drop_tables(connection)
     create_tables(connection)
 
 
