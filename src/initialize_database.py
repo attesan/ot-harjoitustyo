@@ -21,7 +21,9 @@ def create_tables(connection):
         """create table DevicePoints 
         (id integer primary key, 
         device_id integer, 
-        pointname text, type text);""")
+        point_name text, 
+        point_text text, 
+        point_type text);""")
 
     # For possible future use, here you can save device data such as voltage, amps, power,
     # reaction time, dimensions, k-value, etc. You can also save a text key to explain

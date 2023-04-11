@@ -15,15 +15,20 @@ class DeviceRepository:
         # Add device to Devices -table
         cursor.execute(
             "insert into Devices (model, manufacturer) values (?, ?)", 
-            (device_model, device_manufacturer))
+            (device_model, device_manufacturer)
+        )
+
+        # Get row id of device that was just created
+        device_id = cursor.lastrowid
 
         # Add points to DevicePoints -table
         # For now device_points is a list of point-data tuples (device_id, point_name, point_type)
         for p in device_points:
             if p[0] != None:
                 cursor.execute(
-                    "insert into DevicePoints (device_id, point_name, point_type) values (?, ?, ?)",
-                    (p[0], p[1], p[2]))
+                    "insert into DevicePoints (device_id, point_name, point_text, point_type) values (?, ?, ?, ?)",
+                    (device_id, p[0], p[1], p[2])
+                )
 
     # Search for device by model name
     def search_by_model(self, search_word):
@@ -31,7 +36,16 @@ class DeviceRepository:
 
         return cursor.execute(
             "select * from Devices where model = ?", 
-            (search_word,)).fetchall()
+            (search_word,)
+        ).fetchone()
+
+    # Get all devices
+    def find_all_devices(self):
+        cursor = self._connection.cursor()
+
+        return cursor.execute(
+            "select * from devices"
+        ).fetchall()
 
     # Not implemented yet
     def delete_device(self):
