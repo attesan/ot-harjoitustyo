@@ -36,7 +36,13 @@ class EditDevice:
         self.device_point_name_field4 = ttk.Entry(master=self._frame)
 
         # Lists
-        self._device_list = ttk.Treeview(master=self._frame)
+        self._device_list = ttk.Treeview(master=self._frame, columns=(0,1,2,3,4,5), show="headings")
+        self._device_list.heading(0, text="Laite")
+        self._device_list.heading(1, text="Valmistaja")
+        self._device_list.heading(2, text="Piste 1")
+        self._device_list.heading(3, text="Piste 2")
+        self._device_list.heading(4, text="Piste 3")
+        self._device_list.heading(5, text="Piste 4")
 
         # Buttons
         self.close_button = ttk.Button(
@@ -65,6 +71,13 @@ class EditDevice:
 
         self.save_button.grid(row=6, column=0)
         self.close_button.grid(row=6, column=1)
+
+        self.get_devices()
+
+    def get_devices(self):
+        devices = self._devices.find_all_devices()
+        for row in devices:
+            self._device_list.insert("","end",values=row[0:6])
 
     def destroy(self):
         self._frame.destroy()

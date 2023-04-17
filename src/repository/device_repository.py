@@ -13,7 +13,9 @@ class DeviceRepository:
 
         # Add device to Devices -table
         cursor.execute(
-            "insert into Devices (model, manufacturer) values (?, ?)", 
+            """INSERT INTO Devices 
+            (model, manufacturer) 
+            VALUES (?, ?);""", 
             (device_model, device_manufacturer)
         )
 
@@ -21,14 +23,15 @@ class DeviceRepository:
         device_id = cursor.lastrowid
 
         # Add points to DevicePoints -table
-        # For now device_points is a list of point-data tuples (device_id, point_name, point_type)
+        # For now device_points is a list of point names
         for point in device_points:
-            if point is not None and len(point) > 2:
+            if point is not None:
+                print(device_id, point)
                 cursor.execute(
-                    """insert into DevicePoints 
+                    """INSERT INTO DevicePoints 
                     (device_id, point_name, point_text, point_type) 
-                    values (?, ?, ?, ?)""",
-                    (device_id, point[0], point[1], point[2])
+                    VALUES (?, ?, ?, ?);""",
+                    (device_id, point,"not implemented","not implemented")
                 )
         
         self._connection.commit()
@@ -38,7 +41,7 @@ class DeviceRepository:
         cursor = self._connection.cursor()
 
         return cursor.execute(
-            "select * from Devices where model = ?", 
+            "SELECT * FROM Devices WHERE model = ?;", 
             (search_word,)
         ).fetchone()
 
@@ -47,7 +50,7 @@ class DeviceRepository:
         cursor = self._connection.cursor()
 
         return cursor.execute(
-            "select * from devices"
+            "SELECT * FROM devices;"
         ).fetchall()
 
     # Get all points related to a device
@@ -55,9 +58,9 @@ class DeviceRepository:
         cursor = self._connection.cursor()
 
         return cursor.execute(
-            """select DP.point_name, DP.point_text, DP.point_type 
-            from DevicePoints DP, Devices D 
-            where D.id = DP.device_id and D.model = ?"""
+            """SELECT DP.point_name, DP.point_text, DP.point_type 
+            FROM DevicePoints DP, Devices D 
+            WHERE D.id = DP.device_id and D.model = ?;"""
             , (search_word,)
         ).fetchall()
     
@@ -77,7 +80,7 @@ class DeviceRepository:
     def delete_all(self):
         cursor = self._connection.cursor()
 
-        cursor.execute("delete from Devices")
-        cursor.execute("delete from DevicePoints")
-        cursor.execute("delete from DeviceData")
+        cursor.execute("DELETE FROM Devices;")
+        cursor.execute("DELETE FROM DevicePoints;")
+        cursor.execute("DELETE FROM DeviceData;")
         

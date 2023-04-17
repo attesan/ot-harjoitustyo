@@ -35,7 +35,7 @@ class NewDevice:
 
         # Buttons
         self.save_button = ttk.Button(master=self._frame, text="Tallenna", 
-            command=self.handle_new_device())
+            command=self.save_new_device)
         self.close_button = ttk.Button(
             master=self._frame, text="Peruuta", command=self._handle_main_window)
 
@@ -55,14 +55,13 @@ class NewDevice:
         self.save_button.grid(row=5, column=0)
         self.close_button.grid(row=5, column=1)
 
-    def handle_new_device(self):
+    def save_new_device(self):
         name = self.device_name_field.get()
         manufacturer = self.device_made_by_field.get()
         point1 = self.device_point_name_field1.get()
         point2 = self.device_point_name_field2.get()
         point3 = self.device_point_name_field3.get()
         point4 = self.device_point_name_field4.get()
-
         self._devices.new_device(name, manufacturer, [point1,point2,point3,point4])
 
     def destroy(self):

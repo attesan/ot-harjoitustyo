@@ -1,5 +1,6 @@
 # Viikko 5  
-Lisätty uusi ikkuna jossa voi katsella ja muokata lisättyjä laitteita.  
+Lisätty uusi ikkuna jossa voi katsella ja muokata lisättyjä laitteita. Vielä melko raakile.  
+Laitteen tietojen katselu toimii.  
   
 # Viikko 4  
 Testit saatu toimimaan vihdoinkin. Tehty testejä device_repository luokille.  
