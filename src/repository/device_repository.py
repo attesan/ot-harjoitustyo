@@ -61,6 +61,10 @@ class DeviceRepository:
             , (search_word,)
         ).fetchall()
     
+    # Update a database entry not implemented yet
+    def update_device(self, device_model, device_manufacturer, device_points):
+        pass
+    
     # Not implemented yet
     def delete_device(self):
         pass

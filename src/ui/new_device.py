@@ -33,6 +33,7 @@ class NewDevice:
         self.device_point_name_field3 = ttk.Entry(master=self._frame)
         self.device_point_name_field4 = ttk.Entry(master=self._frame)
 
+        # Buttons
         self.save_button = ttk.Button(master=self._frame, text="Tallenna", 
             command=self.handle_new_device())
         self.close_button = ttk.Button(
