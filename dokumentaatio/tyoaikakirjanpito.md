@@ -1,6 +1,7 @@
 # TYÖAIKAKIRJANPITO 2023  
   
-yhteensä: 33 h  
+yhteensä: 37 h  
+17.4. 4 h Lisätty uusi näkymä ohjelman laitteiden katseluun ja muokkaamiseen.  
   
 11.4. 13 h Korjauksia kaikenlaisiin ongelmiin, arkkitehtuurikaavio, luokat toimimaan, testejä lisätty.  
   

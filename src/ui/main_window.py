@@ -1,12 +1,12 @@
 from tkinter import ttk, constants, Menu
 
-
 class MainView:
     # Primary view of the program
-    def __init__(self, root, handle_new_device):
+    def __init__(self, root, handle_new_device, handle_edit_device):
         self._root = root
         self._frame = None
         self._handle_new_device = handle_new_device
+        self._handle_edit_device = handle_edit_device
         self._initialize()
 
     def _initialize(self):
@@ -34,7 +34,7 @@ class MainView:
         self.dropdown_menu_data.add_command(
             label="Lisää laite tietokantaan", command=self._handle_new_device)
         self.dropdown_menu_data.add_command(
-            label="Muokkaa tietokannan laitetta", command=NotImplemented)
+            label="Muokkaa tietokannan laitetta", command=self._handle_edit_device)
 
         # Add different dropdown menus to top menu bar
         self.top_menu.add_cascade(

@@ -6,7 +6,6 @@ from initialize_database import initialize_database
 
 sys.path.insert(0, os.path.abspath(".."))
 
-
 def main():
     window = Tk()
     window.title("RAU laite ja pistesovellus")

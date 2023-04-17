@@ -17,6 +17,7 @@ class NewDevice:
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
+        # Labels for fields
         self.device_name = ttk.Label(master=self._frame, text="Laitteen nimi")
         self.device_made_by = ttk.Label(master=self._frame, text="Valmistaja")
         self.device_point_name1 = ttk.Label(master=self._frame, text="Piste 1")
@@ -24,6 +25,7 @@ class NewDevice:
         self.device_point_name3 = ttk.Label(master=self._frame, text="Piste 3")
         self.device_point_name4 = ttk.Label(master=self._frame, text="Piste 4")
 
+        # Fields
         self.device_name_field = ttk.Entry(master=self._frame)
         self.device_made_by_field = ttk.Entry(master=self._frame)
         self.device_point_name_field1 = ttk.Entry(master=self._frame)
@@ -36,6 +38,7 @@ class NewDevice:
         self.close_button = ttk.Button(
             master=self._frame, text="Peruuta", command=self._handle_main_window)
 
+        # Grid for all view objects
         self.device_name.grid()
         self.device_name_field.grid(row=0, column=1)
         self.device_made_by.grid(row=0, column=2)
