@@ -1,6 +1,4 @@
-import os
 from database_connection import get_database_connection
-
 
 class DeviceRepository:
     # This class is responsible for saving new devices into database and fetching saved devices.
@@ -32,7 +30,7 @@ class DeviceRepository:
                     VALUES (?, ?, ?, ?);""",
                     (device_id, point[0],"not implemented","not implemented")
                 )
-        
+
         self._connection.commit()
 
     # Search for device by model name
@@ -62,7 +60,7 @@ class DeviceRepository:
             WHERE D.id = DP.device_id and D.model = ?;"""
             , (search_word,)
         ).fetchall()
-    
+
     # Update a database entry not implemented yet
     def update_device(self, device_id, device_model, device_manufacturer, device_points):
         cursor = self._connection.cursor()
@@ -84,9 +82,8 @@ class DeviceRepository:
                 WHERE device_id = ? AND id = ?;""",
                 (point[0], device_id, i)
             )
-
             i += 1
-    
+
         self._connection.commit()
 
     # Not implemented yet
