@@ -62,7 +62,7 @@ class NewDevice:
         point2 = self.device_point_name_field2.get()
         point3 = self.device_point_name_field3.get()
         point4 = self.device_point_name_field4.get()
-        self._devices.new_device(name, manufacturer, [point1,point2,point3,point4])
+        self._devices.new_device(name, manufacturer, [(point1,),(point2,),(point3,),(point4,)])
 
     def destroy(self):
         self._frame.destroy()

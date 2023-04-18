@@ -56,6 +56,12 @@ class TestDeviceRepository(unittest.TestCase):
         
         self.assertEqual(len(result), 0)
 
+    def test_points_added_correctly_none(self):
+        self.d.new_device(self.device2[0],self.device2[1],[])
+        result = self.d.find_device_points("model1")
+
+        self.assertEqual(len(result), 0)
+
     def test_points_added_correctly_one(self):
         self.d.new_device(self.device2[0],self.device2[1],self.device2[2])
         result = self.d.find_device_points("model2")

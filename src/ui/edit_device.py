@@ -1,7 +1,7 @@
 import os
 import sys
 from repository.device_repository import DeviceRepository
-from tkinter import ttk, constants
+from tkinter import ttk, constants, END
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -36,13 +36,18 @@ class EditDevice:
         self.device_point_name_field4 = ttk.Entry(master=self._frame)
 
         # Lists
-        self._device_list = ttk.Treeview(master=self._frame, columns=(0,1,2,3,4,5), show="headings")
+        self._device_list = ttk.Treeview(
+            master=self._frame, 
+            columns=(0,1,2,3,4,5), 
+            show="headings", 
+            selectmode="browse")
         self._device_list.heading(0, text="Laite")
         self._device_list.heading(1, text="Valmistaja")
         self._device_list.heading(2, text="Piste 1")
         self._device_list.heading(3, text="Piste 2")
         self._device_list.heading(4, text="Piste 3")
         self._device_list.heading(5, text="Piste 4")
+        self._device_list.bind("<<TreeviewSelect>>",self.populate_fields_with_selected_device_data)
 
         # Buttons
         self.close_button = ttk.Button(
@@ -98,6 +103,30 @@ class EditDevice:
         for row in points:
             data.append(row[0])
         return data
+    
+    # Get data from selected device
+    def populate_fields_with_selected_device_data(self, x):
+        self.clear_fields()
+
+        device = self._device_list.focus()
+        device = self._device_list.item(device)
+        data = device["values"]
+
+        self.device_name_field.insert(0,data[0])
+        self.device_made_by_field.insert(0,data[1])
+        self.device_point_name_field1.insert(0,data[2])
+        self.device_point_name_field2.insert(0,data[3])
+        self.device_point_name_field3.insert(0,data[4])
+        self.device_point_name_field4.insert(0,data[5])
+    
+    # Clear old device data from fields
+    def clear_fields(self):
+        self.device_name_field.delete(0, END)
+        self.device_made_by_field.delete(0, END)
+        self.device_point_name_field1.delete(0, END)
+        self.device_point_name_field2.delete(0, END)
+        self.device_point_name_field3.delete(0, END)
+        self.device_point_name_field4.delete(0, END)
 
     def destroy(self):
         self._frame.destroy()
