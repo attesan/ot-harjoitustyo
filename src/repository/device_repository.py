@@ -76,15 +76,16 @@ class DeviceRepository:
         )
 
         # Update DevicePoints table
-        print(device_points)
+        i = 0
         for point in device_points:
-            print(point[0])
             cursor.execute(
                 """UPDATE DevicePoints
                 SET point_name = ?
-                WHERE device_id = ?;""",
-                (point[0], device_id)
+                WHERE device_id = ? AND id = ?;""",
+                (point[0], device_id, i)
             )
+
+            i += 1
     
         self._connection.commit()
 
