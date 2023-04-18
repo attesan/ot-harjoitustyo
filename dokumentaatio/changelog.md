@@ -3,6 +3,7 @@ Lisätty uusi ikkuna jossa voi katsella ja muokata lisättyjä laitteita. Vielä
 Laitteen tietojen katselu toimii.  
 Laitteiden pisteiden katselu toimii.  
 Pisteiden tallennus toimii nyt.  
+Käyttäjä voi muokata ja tallentaa laitteen tietoja. Pisteiden tallennuksessa vielä bugi.  
   
 # Viikko 4  
 Testit saatu toimimaan vihdoinkin. Tehty testejä device_repository luokille.  

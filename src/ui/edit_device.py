@@ -38,22 +38,23 @@ class EditDevice:
         # Lists
         self._device_list = ttk.Treeview(
             master=self._frame, 
-            columns=(0,1,2,3,4,5), 
+            columns=(0,1,2,3,4,5,6), 
             show="headings", 
             selectmode="browse")
-        self._device_list.heading(0, text="Laite")
-        self._device_list.heading(1, text="Valmistaja")
-        self._device_list.heading(2, text="Piste 1")
-        self._device_list.heading(3, text="Piste 2")
-        self._device_list.heading(4, text="Piste 3")
-        self._device_list.heading(5, text="Piste 4")
+        self._device_list.heading(0, text="Device_id")
+        self._device_list.heading(1, text="Laite")
+        self._device_list.heading(2, text="Valmistaja")
+        self._device_list.heading(3, text="Piste 1")
+        self._device_list.heading(4, text="Piste 2")
+        self._device_list.heading(5, text="Piste 3")
+        self._device_list.heading(6, text="Piste 4")
         self._device_list.bind("<<TreeviewSelect>>",self.populate_fields_with_selected_device_data)
 
         # Buttons
         self.close_button = ttk.Button(
             master=self._frame, text="Peruuta", command=self._handle_main_window)
         self.save_button = ttk.Button(
-            master=self._frame, text="Tallenna")
+            master=self._frame, text="Tallenna", command=self._handle_update_device)
 
         # Grid for all view objects
         self._device_list_label.grid(row=0, column=0)
@@ -87,7 +88,7 @@ class EditDevice:
         # Process every device
         for row in devices: 
             # Get point data
-            points = self.get_point_data(row[0])
+            points = self.get_point_data(row[1])
 
             # Insert data into device_list
             data = list(row) + points[:4]
@@ -108,16 +109,12 @@ class EditDevice:
     def populate_fields_with_selected_device_data(self, x):
         self.clear_fields()
 
-        device = self._device_list.focus()
-        device = self._device_list.item(device)
-        data = device["values"]
-
-        self.device_name_field.insert(0,data[0])
-        self.device_made_by_field.insert(0,data[1])
-        self.device_point_name_field1.insert(0,data[2])
-        self.device_point_name_field2.insert(0,data[3])
-        self.device_point_name_field3.insert(0,data[4])
-        self.device_point_name_field4.insert(0,data[5])
+        data = self.get_device_data_from_tree()
+        fields = [self.device_name_field,self.device_made_by_field,self.device_point_name_field1,self.device_point_name_field2,self.device_point_name_field3,self.device_point_name_field4]
+        i = 1
+        for field in fields:
+            field.insert(0,data[i])
+            i += 1
     
     # Clear old device data from fields
     def clear_fields(self):
@@ -127,6 +124,27 @@ class EditDevice:
         self.device_point_name_field2.delete(0, END)
         self.device_point_name_field3.delete(0, END)
         self.device_point_name_field4.delete(0, END)
+
+    # Handle update if changes saved
+    def _handle_update_device(self):
+        data = self.get_device_data_from_tree()
+
+        device_id = data[0]
+        name = self.device_name_field.get()
+        manufacturer = self.device_made_by_field.get()
+        point1 = self.device_point_name_field1.get()
+        point2 = self.device_point_name_field2.get()
+        point3 = self.device_point_name_field3.get()
+        point4 = self.device_point_name_field4.get()
+
+        self._devices.update_device(device_id, name, manufacturer, [(point1,),(point2,),(point3,),(point4,)])
+
+    # Get selected device data from device_list
+    def get_device_data_from_tree(self):
+        device = self._device_list.focus()
+        device = self._device_list.item(device)
+        data = device["values"]
+        return data
 
     def destroy(self):
         self._frame.destroy()

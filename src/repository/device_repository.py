@@ -49,7 +49,7 @@ class DeviceRepository:
         cursor = self._connection.cursor()
 
         return cursor.execute(
-            "SELECT model, manufacturer FROM devices;"
+            "SELECT * FROM devices;"
         ).fetchall()
 
     # Get all points related to a device
@@ -64,9 +64,30 @@ class DeviceRepository:
         ).fetchall()
     
     # Update a database entry not implemented yet
-    def update_device(self, device_model, device_manufacturer, device_points):
-        pass
+    def update_device(self, device_id, device_model, device_manufacturer, device_points):
+        cursor = self._connection.cursor()
+
+        # Update Devices table
+        cursor.execute(
+            """UPDATE Devices 
+            SET model = ?, manufacturer = ?
+            WHERE id = ?;""",
+            (device_model, device_manufacturer, device_id)
+        )
+
+        # Update DevicePoints table
+        print(device_points)
+        for point in device_points:
+            print(point[0])
+            cursor.execute(
+                """UPDATE DevicePoints
+                SET point_name = ?
+                WHERE device_id = ?;""",
+                (point[0], device_id)
+            )
     
+        self._connection.commit()
+
     # Not implemented yet
     def delete_device(self):
         pass
