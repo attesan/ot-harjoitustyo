@@ -26,12 +26,11 @@ class DeviceRepository:
         # For now device_points is a list of point names
         for point in device_points:
             if point is not None:
-                print(device_id, point)
                 cursor.execute(
                     """INSERT INTO DevicePoints 
                     (device_id, point_name, point_text, point_type) 
                     VALUES (?, ?, ?, ?);""",
-                    (device_id, point,"not implemented","not implemented")
+                    (device_id, point[0],"not implemented","not implemented")
                 )
         
         self._connection.commit()
@@ -50,7 +49,7 @@ class DeviceRepository:
         cursor = self._connection.cursor()
 
         return cursor.execute(
-            "SELECT * FROM devices;"
+            "SELECT model, manufacturer FROM devices;"
         ).fetchall()
 
     # Get all points related to a device
@@ -71,10 +70,6 @@ class DeviceRepository:
     # Not implemented yet
     def delete_device(self):
         pass
-
-    # Delete the database file, implemented in case it is needed
-    def delete_repository(self):
-        os.remove(self._connection)
 
     # Delete everything from all tables
     def delete_all(self):

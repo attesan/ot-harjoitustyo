@@ -6,7 +6,7 @@ from tkinter import ttk, constants
 sys.path.insert(0, os.path.abspath(".."))
 
 class EditDevice:
-    # This view lets the user check what devices are added in the program and edit them.
+    # This class lets the user check what devices are added in the program and edit them.
     def __init__(self, root, handle_main_window):
         self._root = root
         self._frame = None
@@ -74,10 +74,30 @@ class EditDevice:
 
         self.get_devices()
 
+    # This method inserts device and point data from database search to device_list
     def get_devices(self):
+        # Get device data
         devices = self._devices.find_all_devices()
-        for row in devices:
-            self._device_list.insert("","end",values=row[0:6])
+
+        # Process every device
+        for row in devices: 
+            # Get point data
+            points = self.get_point_data(row[0])
+
+            # Insert data into device_list
+            data = list(row) + points[:4]
+            self._device_list.insert("","end",values=data)
+    
+    # Get point data and return it as list for now because other point data is not implemented yet
+    def get_point_data(self, device):
+        # Get point data from database
+        points = self._devices.find_device_points(device)
+
+        # Filter point names from result
+        data = []
+        for row in points:
+            data.append(row[0])
+        return data
 
     def destroy(self):
         self._frame.destroy()

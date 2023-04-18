@@ -1,6 +1,7 @@
 # TYÖAIKAKIRJANPITO 2023  
   
-yhteensä: 41 h  
+yhteensä: 45 h  
+18.4. 4 h Korjattu pisteiden tallennusta hieman. Pisteiden tiedot näkyy nyt laitteen muokkaus näkymässä.  
 17.4. 8 h Lisätty uusi näkymä ohjelman laitteiden katseluun ja muokkaamiseen. Korjattu tietokanta tallennusta. Laitteen tietoja voi nyt katsella.  
   
 viikko 13 h  
