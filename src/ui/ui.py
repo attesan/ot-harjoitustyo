@@ -1,5 +1,6 @@
 from tkinter import Tk
 from ui.main_window import MainView
+from ui.add_project_device import AddProjectDevice
 from ui.new_device import NewDevice
 from ui.edit_device import EditDevice
 
@@ -21,6 +22,9 @@ class UI:
     def _handle_main_window(self):
         self._show_main_window()
 
+    def _handle_add_project_device(self):
+        self._show_add_project_device()
+
     def _handle_new_device(self):
         self._show_new_device()
 
@@ -30,7 +34,12 @@ class UI:
     # Methods for showing different windows
     def _show_main_window(self):
         self._hide_view()
-        self._current_view = MainView(self.root, self._handle_new_device, self._handle_edit_device)
+        self._current_view = MainView(self.root, self._handle_add_project_device, self._handle_new_device, self._handle_edit_device)
+        self._current_view.pack()
+
+    def _show_add_project_device(self):
+        self._hide_view()
+        self._current_view = AddProjectDevice(self.root, self._handle_main_window)
         self._current_view.pack()
 
     def _show_new_device(self):

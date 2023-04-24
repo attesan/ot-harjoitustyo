@@ -35,7 +35,7 @@ class EditDevice:
         self.device_point_name_field3 = ttk.Entry(master=self._frame)
         self.device_point_name_field4 = ttk.Entry(master=self._frame)
 
-        # Lists
+        # List
         self._device_list = ttk.Treeview(
             master=self._frame, 
             columns=(0,1,2,3,4,5,6), 
@@ -52,9 +52,11 @@ class EditDevice:
 
         # Buttons
         self.close_button = ttk.Button(
-            master=self._frame, text="Peruuta", command=self._handle_main_window)
+            master=self._frame, text="Peruuta", 
+            command=self._handle_main_window)
         self.save_button = ttk.Button(
-            master=self._frame, text="Tallenna", command=self._handle_update_device)
+            master=self._frame, text="Tallenna", 
+            command=self._handle_update_device)
 
         # Grid for all view objects
         self._device_list_label.grid(row=0, column=0)

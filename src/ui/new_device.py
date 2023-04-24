@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.abspath(".."))
 
 class NewDevice:
     # This view lets the user create new devices into the program database. These can then be added to project.
+    # Currently only contains basic data like manufacturer and few points for every device.
     def __init__(self, root, handle_main_window):
         self._root = root
         self._frame = None
@@ -37,7 +38,8 @@ class NewDevice:
         self.save_button = ttk.Button(master=self._frame, text="Tallenna", 
             command=self.save_new_device)
         self.close_button = ttk.Button(
-            master=self._frame, text="Peruuta", command=self._handle_main_window)
+            master=self._frame, text="Peruuta", 
+            command=self._handle_main_window)
 
         # Grid for all view objects
         self.device_name.grid()
