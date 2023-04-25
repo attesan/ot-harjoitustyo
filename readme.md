@@ -8,7 +8,7 @@ Ohjelma on vielä aika raakile, viikko on mennyt isoksi osaksi opettelussa ja er
 [Vaatimusmäärittely](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
 [Työaikakirjanpito](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)  
 [Arkkitehtuurikaavio](https://github.com/attesan/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)  
-[Viimeisin julkaisu](https://github.com/attesan/ot-harjoitustyo/releases/tag/viikko5)  
+[Viimeisin julkaisu](https://github.com/attesan/ot-harjoitustyo/releases/tag/Viikko5)  
   
 # Ohjelman suorittaminen  
 1 Pura lataamasi kansio.  
