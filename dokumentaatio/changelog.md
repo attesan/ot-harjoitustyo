@@ -1,7 +1,9 @@
-# Viikko 6
+# Viikko 6  
 Lisätty pääikkunan listoihin sarakkeet laitteille ja pisteille.  
 Lisätty ikkuna laitteiden lisäämiseksi projektiin.  
-Lisätty raakile luokka josta tehdään projektiin laite -olioita tietokannan laitteista.  
+Lisätty raakile luokka josta tehdään projektiin laite olioita tietokannan laitteista. Testit puuttuu.  
+Lisätty luokka projektin pisteiden esittämseksi piste olioina.  
+Lisätty testit projektin piste luokalle.  
   
 # Viikko 5  
 Lisätty uusi ikkuna jossa voi katsella ja muokata lisättyjä laitteita. Vielä melko raakile.  

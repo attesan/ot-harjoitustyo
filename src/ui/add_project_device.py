@@ -54,6 +54,18 @@ class AddProjectDevice:
         self._add_to_project_button.grid(row=2, column=0)
         self._cancel_button.grid(row=2,column=1)
 
+        self.get_devices()
+
+        # This method inserts device and point data from database search to device_list
+    def get_devices(self):
+        # Get device data
+        devices = self._devices.find_all_devices()
+
+        # Insert data into device_list
+        for row in devices: 
+            data = list(row)
+            self._device_list.insert("","end",values=data[1:])
+
     def destroy(self):
         self._frame.destroy()
 
