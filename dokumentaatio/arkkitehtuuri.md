@@ -14,6 +14,6 @@ classDiagram
     device_repository --> add_project_device
     
     Project "1" --> main_window
-    ProjectDevice "*" --> project
+    ProjectDevice "*" --> Project
     ProjectPoint "0-4" --> ProjectDevice
     add_project_device <-- ProjectDevice
