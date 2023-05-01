@@ -1,6 +1,9 @@
 # TYÖAIKAKIRJANPITO 2023  
   
 yhteensä: 58 h  
+1.5. 2 h Korjailtu lint virheitä ja muutamia bugeja. Loppuaika (4h) meni koodikatselmointiin, en tiedä kuuluuko se kirjata tänne, mutta oletetaan että ei.  
+  
+viikko 58 h  
 25.4. 8 h Tehty luokka projektin pisteille sekä sen testit. Aloitettu luokka projektin laitteille, se on kohtalaisella mallilla mutta hieman kesken. Testejä ei vielä tälle luokalle. Testi ongelmien selvittelyä.  
 24.4. 4 h Mietitty luokkarakennetta ja ohjelmalogiikan erottamista hieman. Luotu uusi ikkuna laitteiden lisäykselle ja tehty pääikkunaa eteenpäin. Muokattu koodin jäsennystä yhdenmukaisemmaksi.  
   

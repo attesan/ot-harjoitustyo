@@ -4,16 +4,20 @@ class ProjectDevice:
     # This class is used to represent devices of a project. Device data is pulled from database
     # and complemented by additional data that is project specific.
     def __init__(
-            self, device_type:str,
+            self,
+            device_type:str,
             device_points:list,
             device_position:str,
             point_name_separator:str = "_"):
+
         self.__type = device_type
+
         self.__points = []
         # Create point objects from database point data.
         for entry in device_points:
             self.__points.append(
                 ProjectPoint(device_position, entry, "NotImplemented", point_name_separator))
+
         self.__position = device_position
         self.__separator = point_name_separator
 
