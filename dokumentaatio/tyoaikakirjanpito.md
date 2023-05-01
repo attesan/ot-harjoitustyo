@@ -1,7 +1,7 @@
 # TYÖAIKAKIRJANPITO 2023  
   
-yhteensä: 58 h  
-1.5. 2 h Korjailtu lint virheitä ja muutamia bugeja. Loppuaika (4h) meni koodikatselmointiin, en tiedä kuuluuko se kirjata tänne, mutta oletetaan että ei.  
+yhteensä: 62 h  
+1.5. 4 h Korjailtu lint virheitä ja muutamia bugeja. Loppuaika (4h) meni koodikatselmointiin, en tiedä kuuluuko se kirjata tänne, mutta oletetaan että ei. Lisätty myös testit project_device luokalle.  
   
 viikko 58 h  
 25.4. 8 h Tehty luokka projektin pisteille sekä sen testit. Aloitettu luokka projektin laitteille, se on kohtalaisella mallilla mutta hieman kesken. Testejä ei vielä tälle luokalle. Testi ongelmien selvittelyä.  
