@@ -13,7 +13,7 @@ class DeviceRepository:
         cursor.execute(
             """INSERT INTO Devices 
             (model, manufacturer) 
-            VALUES (?, ?);""", 
+            VALUES (?, ?);""",
             (device_model, device_manufacturer)
         )
 
