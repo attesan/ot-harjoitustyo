@@ -1,7 +1,15 @@
 class ProjectPoint:
-    # Device that is added to project references a number of ProjectPoint objects that represent
-    # points configured for the device. Every point has a point name, for example AC1_TE1_AI.
-    # This class holds all information related to a point and methods for getting and setting.
+    """Device that is added to project references a number of ProjectPoint objects that represent
+    points configured for the device. Every point has a point name, for example AC1_TE1_AI.
+    This class holds all information related to a point and methods for getting and setting.
+    
+    Attributes:
+        self.__device_position: position of the parent device
+        self.__point_position: position of this point
+        self.__point_type: IO type of this point
+        self.__separator: character that separeates point name sections.
+        self.__point_name
+        """
     def __init__(
             self,
             parent_device_position:str,
@@ -15,15 +23,15 @@ class ProjectPoint:
         self.__separator = point_name_separator
         self.__point_name = self.__compose_point_name()
 
-    # Compose point name.
     def __compose_point_name(self):
+        """Compose point name from point data"""
         new_name = self.__device_position + self.__separator
         new_name += self.point_position + self.__separator
         new_name += self.point_type
         return new_name
 
-    # Make sure given data is in correct form.
     def __check_valid(self, data:str):
+        """Make sure given data is in correct form."""
         allowed = "qwertyuiopåasdfghjklöäzxcvbnmQWERTYUIOPÅASDFGHJKLÖÄZXCVBNM,._1234567890+-"
         for characer in data:
             if characer not in allowed or characer == self.__separator:
