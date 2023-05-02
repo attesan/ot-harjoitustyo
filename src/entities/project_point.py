@@ -8,26 +8,31 @@ class ProjectPoint:
             point_position:str,
             point_type:str,
             point_name_separator:str = "_"):
-        self.__point_type = point_type
-        self.__point_position = point_position
+        
         self.__device_position = parent_device_position
+        self.__point_position = point_position
+        self.__point_type = point_type
         self.__separator = point_name_separator
         self.__point_name = self.__compose_point_name()
 
-    # Compose point name
+    # Compose point name.
     def __compose_point_name(self):
         new_name = self.__device_position + self.__separator
         new_name += self.point_position + self.__separator
         new_name += self.point_type
         return new_name
 
-    # Make sure given data is in correct form
-    def __check_valid(self, data):
+    # Make sure given data is in correct form.
+    def __check_valid(self, data:str):
         allowed = "qwertyuiopåasdfghjklöäzxcvbnmQWERTYUIOPÅASDFGHJKLÖÄZXCVBNM,._1234567890+-"
         for characer in data:
             if characer not in allowed or characer == self.__separator:
                 return False
         return True
+
+    # Return point data as tuple.
+    def get_point_data(self):
+        return (self.device_position, self.point_position, self.point_type, self.point_name)
 
     # Getters
     @property
@@ -46,21 +51,21 @@ class ProjectPoint:
     def point_name(self):
         return self.__point_name
 
-    # setters
+    # Setters.
     @point_type.setter
-    def point_type(self, point_type):
+    def point_type(self, point_type:str):
         if self.__check_valid(point_type):
             self.__point_type = point_type
             self.__point_name = self.__compose_point_name()
 
     @point_position.setter
-    def point_position(self, point_position):
+    def point_position(self, point_position:str):
         if self.__check_valid(point_position):
             self.__point_position = point_position
             self.__point_name = self.__compose_point_name()
 
     @device_position.setter
-    def device_position(self, device_position):
+    def device_position(self, device_position:str):
         if self.__check_valid(device_position):
             self.__device_position = device_position
             self.__point_name = self.__compose_point_name()

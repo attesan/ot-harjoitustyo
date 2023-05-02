@@ -47,6 +47,9 @@ class TestProjectPoint(unittest.TestCase):
         self.point.point_type = "DI"
         self.assertEqual(self.point.point_name, "AC1_TE1_DI")
 
+    def test_get_point_data(self):
+        self.assertEqual(self.point.get_point_data(), ("AC1","TE1","AI","AC1_TE1_AI"))
+
     # Custom separator tests
     def test_custom_separator_point_device_position_created_correctly(self):
         self.assertEqual(self.point2.device_position, "AC1")

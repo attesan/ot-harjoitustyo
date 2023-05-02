@@ -1,3 +1,9 @@
+# Viikko 7  
+Lisätty palvelu luokka projektin datalle.  
+Lisätty testit projektin data palvelulle.  
+Lisätty project_device ja project_point luokkiin metodit tietojen hakemiselle.  
+Lisätty testejä tietojen hakuun liittyen.  
+  
 # Viikko 6  
 Lisätty pääikkunan listoihin sarakkeet laitteille ja pisteille.  
 Lisätty ikkuna laitteiden lisäämiseksi projektiin.  

@@ -41,7 +41,7 @@ class NewDevice:
             master=self._frame, text="Peruuta", 
             command=self._handle_main_window)
 
-        # Grid for all view objects
+        # Grid for all view objects.
         self.device_name.grid()
         self.device_name_field.grid(row=0, column=1)
         self.device_made_by.grid(row=0, column=2)
@@ -64,6 +64,10 @@ class NewDevice:
         point2 = self.device_point_name_field2.get()
         point3 = self.device_point_name_field3.get()
         point4 = self.device_point_name_field4.get()
+        
+        # Check that at least minimum information is given.
+        if name == "" or point1 == "" :
+            return
         self._devices.new_device(name, manufacturer, [(point1,),(point2,),(point3,),(point4,)])
 
     def destroy(self):

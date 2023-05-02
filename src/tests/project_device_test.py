@@ -5,7 +5,7 @@ from entities.project_device import ProjectDevice
 
 sys.path.insert(0, os.path.abspath(".."))
 
-class Test(unittest.TestCase):
+class TestProjectDevice(unittest.TestCase):
     def setUp(self):
         self.device = ProjectDevice("AC", ["TE1", "TE2", "TE3", "TE4"], "AC1")
         self.device2 = ProjectDevice("AC", ["TE1"], "AC1", ".")
@@ -48,3 +48,6 @@ class Test(unittest.TestCase):
     def test_position_setter_invalid_input_detected(self):
         self.device.position = "`/§½€£<>"
         self.assertEqual(self.device.position, "AC1")
+
+    def test_get_point_data(self):
+        self.assertEqual(len(self.device.get_points()), 4)

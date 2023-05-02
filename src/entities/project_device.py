@@ -22,17 +22,27 @@ class ProjectDevice:
         self.__separator = point_name_separator
 
     # Make sure given data is in correct form
-    def __check_valid(self, data):
+    def __check_valid(self, data:str):
         allowed = "qwertyuiopåasdfghjklöäzxcvbnmQWERTYUIOPÅASDFGHJKLÖÄZXCVBNM,._1234567890+-"
         for character in data:
             if character not in allowed or character == self.__separator:
                 return False
         return True
 
-    # Update related point objects with new device position
+    # Update related point objects with new device position.
     def __update_point_names(self):
         for point in self.__points:
             point.device_position = self.__position
+
+    # Get point data from points related to this device and return as a list.
+    def get_points(self):
+        data = []
+
+        # Get point data for every point.
+        for point in self.points:
+            data.append(point.get_point_data())
+
+        return data
 
     # Getter methods
     @property
@@ -49,7 +59,7 @@ class ProjectDevice:
 
     # Setter methods for changing data
     @position.setter
-    def position(self, position):
+    def position(self, position:str):
         # Check data is valid before updating related point data
         if self.__check_valid(position):
             self.__position = position
