@@ -20,4 +20,4 @@ classDiagram
     Project "1" --> main_window
     ProjectDevice "*" --> Project
     ProjectPoint "0-4" --> ProjectDevice
-    add_project_device <-- ProjectDevice
+    project_device_maker <-- ProjectDevice
