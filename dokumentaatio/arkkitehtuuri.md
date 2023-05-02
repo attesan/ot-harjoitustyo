@@ -12,6 +12,10 @@ classDiagram
     device_repository --> new_device
     device_repository --> edit_device
     device_repository --> add_project_device
+    project_device_maker --> add_project_device
+    project_device_maker -- device_repository
+    project_data_service --> main_window
+    project_data_service --> add_project_device
     
     Project "1" --> main_window
     ProjectDevice "*" --> Project
