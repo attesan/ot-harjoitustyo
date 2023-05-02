@@ -1,8 +1,27 @@
 from tkinter import ttk, constants, Menu
 
 class MainView:
-    # Primary view of the program. User can access other views from this view.
+    """Primary view of the program. User can access other views from this view.
+    User can get to other windows from here and view project data.
+
+    Attributes: 
+        _root: root for view objects
+        _frame: Current frame, initally None
+        _handle_add_project_device: reference for window transition to add project device window.
+        _handle_new_device: reference for window transition to new device window.
+        _handle_edit_device: reference for window transition to edit device window.
+        _project_data_service: reference to project data service for getting project data.
+    """
     def __init__(self, root, handle_add_project_device, handle_new_device, handle_edit_device, project_data_service):
+        """Constructor for class. Sets initial parameters and initializes the main window. 
+        
+        Args:
+            root: root for view objects
+            handle_add_project_device: reference for window transition to add project device window.
+            handle_new_device: reference for window transition to new device window.
+            handle_edit_device: reference for window transition to edit device window.
+            project_data_service: reference to project data service for getting project data.
+        """
         self._root = root
         self._frame = None
         self._handle_add_project_device = handle_add_project_device
@@ -12,6 +31,8 @@ class MainView:
         self._initialize()
 
     def _initialize(self):
+        """For initializing the main window and showing project data.
+        """
         self._frame = ttk.Frame(master=self._root)
 
         # Top edge menu bar that contains dropdown menus
@@ -86,23 +107,26 @@ class MainView:
 
         self._root.config(menu=self.top_menu)
 
-        self.populate_list()
+        #self.populate_list() to buggy to include right now.
 
-    # Get device and point data from project data manager and add it to points and devices -lists.
     def populate_list(self):
-        # Get devices and add to list.
+        """Get device and point data from project data manager and add it to points and devices -lists.
+        """
         devices = self.project_data_service.get_device_list()
         for device_position, device in devices:
             self.devices_treeview.insert("","end",values=(device_position,device.model,device.manufacturer))
 
-        # Get points and add to list.
         points = self.project_data_service.get_point_list()
         for device_position, device_points in points:
             for point in device_points:
                 self.points_treeview.insert("","end",values=(device_position, point.point_position, self.point_type, self.point_name))
 
     def destroy(self):
+        """For destroying the current view frame.
+        """
         self._frame.destroy()
 
     def pack(self):
+        """For packing the view.
+        """
         self._frame.pack(fill=constants.X)

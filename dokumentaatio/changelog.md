@@ -5,6 +5,7 @@ Lisätty testit projektin data palvelulle.
 Lisätty project_device ja project_point luokkiin metodit tietojen hakemiselle.  
 Lisätty testejä tietojen hakuun liittyen.  
 Käyttäjä voi nyt lisätä laitteita projektiin. Laitteiden lisäys päänäkymään jäi vielä liian bugiseksi, joten sitä ei ole vielä mukana tällä viikolla.  
+Kirjoitettu kommentit uudelleen vastaamaan arvostelua.  
   
 # Viikko 6  
 Lisätty pääikkunan listoihin sarakkeet laitteille ja pisteille.  

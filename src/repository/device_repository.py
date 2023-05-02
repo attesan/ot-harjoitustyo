@@ -4,7 +4,7 @@ class DeviceRepository:
     """This class is responsible for saving new devices into database and fetching saved devices.
     
     Attributes: 
-        _connection: database connection
+        _connection: database connection.
     """
     def __init__(self, ):
         self._connection = get_database_connection()
@@ -13,10 +13,10 @@ class DeviceRepository:
         """For adding new devices into database.
         
         Args:
-            device_model: model of the device
-            device_manufacturer: manufacturer of the device
-            device_points: list of points relating to this device
-            """
+            device_model: model of the device.
+            device_manufacturer: manufacturer of the device.
+            device_points: list of points relating to this device.
+        """
         cursor = self._connection.cursor()
 
         # Add device to Devices -table
@@ -47,7 +47,10 @@ class DeviceRepository:
         """For searching device and its related points by device id.
         
         Args:
-            search_id: id of device to be searched
+            search_id: id of device to be searched.
+
+        Returns: 
+            Tuple containing device data and points that resulted from database search.
         """
         cursor = self._connection.cursor()
 
@@ -73,6 +76,9 @@ class DeviceRepository:
         
         Args:
             search_word: device model to be searched
+
+        Returns:
+            One row from the database search.
         """
         cursor = self._connection.cursor()
 
@@ -83,6 +89,9 @@ class DeviceRepository:
 
     def find_all_devices(self):
         """For retrieving all devices.
+
+        Returns:
+            All devices from the database.
         """
         cursor = self._connection.cursor()
 
@@ -95,6 +104,9 @@ class DeviceRepository:
 
         Args:
             search_word: device model to be searched.
+
+        Returns:
+            All resulting rows of database search.
         """
         cursor = self._connection.cursor()
 
@@ -116,7 +128,6 @@ class DeviceRepository:
         """
         cursor = self._connection.cursor()
 
-        # Update Devices table
         cursor.execute(
             """UPDATE Devices 
             SET model = ?, manufacturer = ?
@@ -124,7 +135,6 @@ class DeviceRepository:
             (device_model, device_manufacturer, device_id)
         )
 
-        # Update DevicePoints table
         i = 0
         for point in device_points:
             cursor.execute(
@@ -138,11 +148,12 @@ class DeviceRepository:
         self._connection.commit()
 
     def delete_device(self):
-        """Not implemented yet"""
-        pass
+        """Not implemented yet
+        """
 
     def delete_all(self):
-        """Delete everything from all tables"""
+        """Delete everything from all tables
+        """
         cursor = self._connection.cursor()
 
         cursor.execute("DELETE FROM Devices;")

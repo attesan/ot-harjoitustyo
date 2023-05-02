@@ -13,7 +13,6 @@ def main():
     window = Tk()
     window.title("RAU laite ja pistesovellus")
 
-    # Initialize database and project data.
     initialize_database()
     project_data_service = ProjectDataService()
 

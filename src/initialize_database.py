@@ -45,7 +45,7 @@ def drop_tables(connection):
     """For dropping every database table. Used for testing.
     
     Args:
-        connection: database connection
+        connection: database connection.
     """
     cursor = connection.cursor()
     cursor.execute("drop table if exists Devices;")

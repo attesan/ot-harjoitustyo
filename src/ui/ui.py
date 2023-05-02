@@ -8,10 +8,16 @@ class UI:
     """This class handles transitions between different windows.
     
     Attributes: 
-        root: root object for view
-        _current_view: 
+        root: root object for view.
+        _current_view: For showing current view. Empty initially.
+        project_data_service: for keeping track of project data.
     """
     def __init__(self, root, project_data_service):
+        """Constructor for class. Sets initial attributes.
+        
+        Args:
+            root: root object for view.
+            project_data_service: for keeping track of project data."""
         self.root = root
         self._current_view = None
         self.project_data_service = project_data_service

@@ -7,11 +7,26 @@ from services.project_device_maker import ProjectDeviceMaker
 sys.path.insert(0, os.path.abspath(".."))
 
 class AddProjectDevice:
-    # This class lets user add devices into project. Added devices are shown in main view. The devices are added as device -objects.
-    # View has fields for project specific data, such as device position: apparatus/machine the device is a logical part of.
-    # For example, Temperature sensor "TE1" that is part of Air conditioner "AC1". This information is shown in main view
-    # and is used to compose the full point name for the device.
+    """This class lets user add devices into project. Added devices are shown in main view. The devices are added as device -objects.
+    View has fields for project specific data, such as device position: apparatus/machine the device is a logical part of.
+    For example, Temperature sensor "TE1" that is part of Air conditioner "AC1". This information is shown in main view
+    and is used to compose the full point name for the device.
+    
+    Attributes:
+        _root: root for view objects.
+        _frame: Frame for view objects, initially None.
+        _handle_main_window: reference for handling transition to main window.
+        _devices: for database operations.
+        project_data_service: for getting devices and points that have been added to project.
+        """
     def __init__(self, root, handle_main_window, project_data_service):
+        """Constuctor for class. Sets initial attributes.
+        
+        Args:
+            root: root for view objects.
+            handle_main_window: reference for handling transition to main window.
+            project_data_service: for getting devices and points that have been added to project.
+        """
         self._root = root
         self._frame = None
         self._handle_main_window = handle_main_window
@@ -20,6 +35,8 @@ class AddProjectDevice:
         self._initialize()
 
     def _initialize(self):
+        """For initializing the add project device window and showing database devices.
+        """
         self._frame = ttk.Frame(master=self._root)
 
         # Labels
@@ -57,21 +74,20 @@ class AddProjectDevice:
         self._add_to_project_button.grid(row=2, column=0)
         self._cancel_button.grid(row=2,column=1)
 
-        #self.get_devices() to buggy to include right now.
+        self.get_devices()
 
-    # This method inserts device and point data from database search to device_list.
     def get_devices(self):
-        # Get device data
+        """This method inserts device and point data from database search to device_list.
+        """
         devices = self._devices.find_all_devices()
 
-        # Insert data into device_list
         for row in devices: 
             data = list(row)
             self._device_list.insert("","end",values=data)
 
-    # This method is used to add devices into the project.
     def add_to_project(self):
-        # Get values of selected item from list and device position.
+        """This method is used to add devices into the project.
+        """
         device = self._device_list.focus()
         device = self._device_list.item(device)
         data = device["values"]
@@ -81,15 +97,17 @@ class AddProjectDevice:
 
         device_position = self._device_position.get()
 
-        # Find device and device point data by device id and create a project_device -object.
         device_maker = ProjectDeviceMaker()
         new_project_device = device_maker.make_project_device(device_position,data[0])
         
-        # Add project_device to project data manager.
         self.project_data_service.add_device(new_project_device)
 
     def destroy(self):
+        """For destroying the current view frame.
+        """
         self._frame.destroy()
 
     def pack(self):
+        """For packing the view.
+        """
         self._frame.pack(fill=constants.X)

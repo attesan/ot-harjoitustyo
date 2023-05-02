@@ -1,7 +1,7 @@
 # TYÖAIKAKIRJANPITO 2023  
   
-yhteensä: 71 h  
-2.5. 9 h Lisätty toiminnallisuutta entities -luokkiin sekä niiden testejä. Lisätty project_data ja project_device_maker -palvelt. Laitteita voi lisätä projektiin.  
+yhteensä: 73 h  
+2.5. 11 h Lisätty toiminnallisuutta entities -luokkiin sekä niiden testejä. Lisätty project_data ja project_device_maker -palvelt. Laitteita voi lisätä projektiin. Kirjoitettu kommentit uudelleen vastaamaan arvostelua.  
 1.5. 4 h Korjailtu lint virheitä ja muutamia bugeja. Loppuaika (4h) meni koodikatselmointiin, en tiedä kuuluuko se kirjata tänne, mutta oletetaan että ei. Lisätty myös testit project_device luokalle.  
   
 viikko 58 h  

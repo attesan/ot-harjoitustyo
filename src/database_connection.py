@@ -11,6 +11,6 @@ def get_database_connection():
     """For returning database connection.
     
     Returns: 
-        database connections
+        database connection.
     """
     return connection

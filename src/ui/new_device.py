@@ -7,9 +7,22 @@ from services.project_data_service import ProjectDataService
 sys.path.insert(0, os.path.abspath(".."))
 
 class NewDevice:
-    # This view lets the user create new devices into the program database. These can then be added to project.
-    # Currently only contains basic data like manufacturer and few points for every device.
+    """This view lets the user create new devices into the program database. These can then be added to project.
+    Currently only contains basic data like manufacturer and few points for every device.
+    
+    Attributes:
+        _root: root for view
+        _frame: Current frame, initally None
+        _handle_main_window: reference to main window transition
+        _devices: for database operations
+    """
     def __init__(self, root, handle_main_window):
+        """Constructor for class.
+        
+        Args: 
+            root: root for view
+            handle_main_window: reference for main window transition
+        """
         self._root = root
         self._frame = None
         self._handle_main_window = handle_main_window
@@ -17,6 +30,8 @@ class NewDevice:
         self._initialize()
 
     def _initialize(self):
+        """For initializing the new device window.
+        """
         self._frame = ttk.Frame(master=self._root)
 
         # Labels for fields
@@ -59,6 +74,8 @@ class NewDevice:
         self.close_button.grid(row=5, column=1)
 
     def save_new_device(self):
+        """For saving new device into database. Gets data from text fields.
+        """
         name = self.device_name_field.get()
         manufacturer = self.device_made_by_field.get()
         point1 = self.device_point_name_field1.get()
@@ -72,7 +89,11 @@ class NewDevice:
         self._devices.new_device(name, manufacturer, [(point1,),(point2,),(point3,),(point4,)])
 
     def destroy(self):
+        """For destroying the current view frame.
+        """
         self._frame.destroy()
 
     def pack(self):
+        """For packing the view.
+        """
         self._frame.pack(fill=constants.X)

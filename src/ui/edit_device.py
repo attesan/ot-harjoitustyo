@@ -6,8 +6,21 @@ from tkinter import ttk, constants, END
 sys.path.insert(0, os.path.abspath(".."))
 
 class EditDevice:
-    # This class lets the user check what devices are added in the program and edit them.
+    """This class lets the user check what devices are saved in the database and edit them.
+    
+    Attributes:
+        _root: root for view objects
+        _frame: Current frame, initally None
+        _handle_main_window: reference for transitioning to main window.
+        _devices: for database operations.
+    """
     def __init__(self, root, handle_main_window):
+        """Constructor for class. Sets initial attribute values.
+        
+        Args:
+            root: root for view objects.
+            handle_main_window: reference for transitioning to main window.
+        """
         self._root = root
         self._frame = None
         self._handle_main_window = handle_main_window
@@ -15,6 +28,8 @@ class EditDevice:
         self._initialize()
 
     def _initialize(self):
+        """For initializing the edit device window and showing project data.
+        """
         self._frame = ttk.Frame(master=self._root)
 
         # Labels
@@ -82,12 +97,11 @@ class EditDevice:
 
         self.get_devices()
 
-    # This method inserts device and point data from database search to device_list
     def get_devices(self):
-        # Get device data
+        """This method inserts device and point data from database search to device_list.
+        """
         devices = self._devices.find_all_devices()
 
-        # Process every device
         for row in devices: 
             # Get point data
             points = self.get_point_data(row[1])
@@ -96,19 +110,25 @@ class EditDevice:
             data = list(row) + points[:4]
             self._device_list.insert("","end",values=data)
     
-    # Get point data and return it as list for now because other point data is not implemented yet
     def get_point_data(self, device):
-        # Get point data from database
+        """Get point data and return it as list for now because other point data is not implemented yet.
+        
+        Args:
+            device: device type for getting point data from database.
+        """
         points = self._devices.find_device_points(device)
 
-        # Filter point names from result
         data = []
         for row in points:
             data.append(row[0])
         return data
     
-    # Get data from selected device
     def populate_fields_with_selected_device_data(self, x):
+        """For placing relevant device data into ui text fields.
+        
+        Args:
+            x: mystery argument i had to add to get rid of a pesky compiler complaint.
+        """
         self.clear_fields()
 
         data = self.get_device_data_from_tree()
@@ -118,8 +138,9 @@ class EditDevice:
             field.insert(0,data[i])
             i += 1
     
-    # Clear old device data from fields
     def clear_fields(self):
+        """For clearing the ui text fields.
+        """
         self.device_name_field.delete(0, END)
         self.device_made_by_field.delete(0, END)
         self.device_point_name_field1.delete(0, END)
@@ -127,8 +148,9 @@ class EditDevice:
         self.device_point_name_field3.delete(0, END)
         self.device_point_name_field4.delete(0, END)
 
-    # Handle update if changes saved
     def _handle_update_device(self):
+        """For handling device data update. Gets data from text fields and formats it.
+        """
         data = self.get_device_data_from_tree()
 
         device_id = data[0]
@@ -141,15 +163,23 @@ class EditDevice:
 
         self._devices.update_device(device_id, name, manufacturer, [(point1,),(point2,),(point3,),(point4,)])
 
-    # Get selected device data from device_list
     def get_device_data_from_tree(self):
+        """For getting data of the selected device from device_list.
+        
+        Returns:
+            data: relevant device data from treeview
+            """
         device = self._device_list.focus()
         device = self._device_list.item(device)
         data = device["values"]
         return data
 
     def destroy(self):
+        """For destroying the current view frame.
+        """
         self._frame.destroy()
 
     def pack(self):
+        """For packing the view.
+        """
         self._frame.pack(fill=constants.X)
