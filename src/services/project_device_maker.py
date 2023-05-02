@@ -6,12 +6,22 @@ from repository.device_repository import DeviceRepository
 sys.path.insert(0, os.path.abspath(".."))
 
 class ProjectDeviceMaker:
-    # This class turns database data into project_device -objects.
+    """This class turns database data into project_device -objects.
+    
+    Attributes:
+        _devices: database connection
+    """
     def __init__(self):
+        """Constructor for class"""
         self._devices = DeviceRepository()
 
-    # Make device for project_data_service.
     def make_project_device(self, device_position:str ,device_id:int):
+        """Make device for project_data_service.
+        
+        Args:
+            device_position: position of device
+            device_id: device id for database search
+        """
         # Get (device_data, point_data) tuple from repository.
         data = self.__get_device_data(device_id)
         point_positions = []
@@ -24,7 +34,11 @@ class ProjectDeviceMaker:
         new_project_device = ProjectDevice(data[0][1],point_positions,device_position,data[0][2])
         return new_project_device
 
-    # Get data from repository.
     def __get_device_data(self, device_id:int):
+        """For getting device and point data from repository.
+        
+        Args:
+            device_id: device id to be searched
+        """
         data = self._devices.search_device_data_by_id(device_id)
         return data

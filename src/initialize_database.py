@@ -6,6 +6,11 @@ sys.path.insert(0, os.path.abspath(".."))
 
 # Create device, point and data tables in the database
 def create_tables(connection):
+    """For creating required database tables.
+    
+    Args:
+        conneciton: database connection
+    """
     cursor = connection.cursor()
 
     # Device model and manufacturer in this table
@@ -36,16 +41,21 @@ def create_tables(connection):
 
     connection.commit()
 
-# Drop all tables
 def drop_tables(connection):
+    """For dropping every database table. Used for testing.
+    
+    Args:
+        connection: database connection
+    """
     cursor = connection.cursor()
     cursor.execute("drop table if exists Devices;")
     cursor.execute("drop table if exists DevicePoints;")
     cursor.execute("drop table if exists DeviceData;")
     connection.commit()
 
-# Drop all tables and make new ones
 def initialize_database():
+    """Drop all tables and make new ones.
+    """
     connection = get_database_connection()
     drop_tables(connection)
     create_tables(connection)

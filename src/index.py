@@ -8,6 +8,8 @@ from services.project_data_service import ProjectDataService
 sys.path.insert(0, os.path.abspath(".."))
 
 def main():
+    """For initializing the program. Has main loop. Creates project_data_Service.
+    """
     window = Tk()
     window.title("RAU laite ja pistesovellus")
 

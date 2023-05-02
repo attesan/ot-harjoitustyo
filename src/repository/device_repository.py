@@ -1,12 +1,22 @@
 from database_connection import get_database_connection
 
 class DeviceRepository:
-    # This class is responsible for saving new devices into database and fetching saved devices.
+    """This class is responsible for saving new devices into database and fetching saved devices.
+    
+    Attributes: 
+        _connection: database connection
+    """
     def __init__(self, ):
         self._connection = get_database_connection()
 
-    # Add new device into database
     def new_device(self, device_model, device_manufacturer, device_points):
+        """For adding new devices into database.
+        
+        Args:
+            device_model: model of the device
+            device_manufacturer: manufacturer of the device
+            device_points: list of points relating to this device
+            """
         cursor = self._connection.cursor()
 
         # Add device to Devices -table
@@ -33,8 +43,12 @@ class DeviceRepository:
 
         self._connection.commit()
 
-    # Search by id.
     def search_device_data_by_id(self,search_id:int):
+        """For searching device and its related points by device id.
+        
+        Args:
+            search_id: id of device to be searched
+        """
         cursor = self._connection.cursor()
 
         # Get device data.
@@ -55,6 +69,11 @@ class DeviceRepository:
 
     # Search for device by model name
     def search_by_model(self, search_word:str):
+        """For searching device by model.
+        
+        Args:
+            search_word: device model to be searched
+        """
         cursor = self._connection.cursor()
 
         return cursor.execute(
@@ -62,16 +81,21 @@ class DeviceRepository:
             (search_word,)
         ).fetchone()
 
-    # Get all devices
     def find_all_devices(self):
+        """For retrieving all devices.
+        """
         cursor = self._connection.cursor()
 
         return cursor.execute(
             "SELECT * FROM devices;"
         ).fetchall()
 
-    # Get all points related to a device
     def find_device_points(self, search_word:str):
+        """Get all points related to a device.
+
+        Args:
+            search_word: device model to be searched.
+        """
         cursor = self._connection.cursor()
 
         return cursor.execute(
@@ -81,8 +105,15 @@ class DeviceRepository:
             , (search_word,)
         ).fetchall()
 
-    # Update a database entry not implemented yet
     def update_device(self, device_id, device_model, device_manufacturer, device_points):
+        """Update a database entry.
+        
+        Args:
+            device_id: new id for device
+            device_model: new model for device
+            device_manufacturer: new manufacturer for device
+            device_points: new points for device
+        """
         cursor = self._connection.cursor()
 
         # Update Devices table
@@ -106,12 +137,12 @@ class DeviceRepository:
 
         self._connection.commit()
 
-    # Not implemented yet
     def delete_device(self):
+        """Not implemented yet"""
         pass
 
-    # Delete everything from all tables
     def delete_all(self):
+        """Delete everything from all tables"""
         cursor = self._connection.cursor()
 
         cursor.execute("DELETE FROM Devices;")
