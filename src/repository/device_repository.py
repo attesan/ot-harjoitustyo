@@ -33,8 +33,28 @@ class DeviceRepository:
 
         self._connection.commit()
 
+    # Search by id.
+    def search_device_data_by_id(self,search_id:int):
+        cursor = self._connection.cursor()
+
+        # Get device data.
+        device_data = cursor.execute(
+            "SELECT * FROM Devices WHERE Id = ?;",
+            (search_id,)
+        ).fetchone()
+
+        # Get device points data.
+        device_points = cursor.execute(
+            """SELECT DP.point_name, DP.point_text, DP.point_type 
+            FROM DevicePoints DP, Devices D 
+            WHERE D.id = ? AND D.id = DP.device_id""",
+            (search_id,)
+        ).fetchall()
+
+        return (device_data, device_points)
+
     # Search for device by model name
-    def search_by_model(self, search_word):
+    def search_by_model(self, search_word:str):
         cursor = self._connection.cursor()
 
         return cursor.execute(
@@ -51,7 +71,7 @@ class DeviceRepository:
         ).fetchall()
 
     # Get all points related to a device
-    def find_device_points(self, search_word):
+    def find_device_points(self, search_word:str):
         cursor = self._connection.cursor()
 
         return cursor.execute(

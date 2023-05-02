@@ -8,7 +8,7 @@ class ProjectPoint:
             point_position:str,
             point_type:str,
             point_name_separator:str = "_"):
-        
+
         self.__device_position = parent_device_position
         self.__point_position = point_position
         self.__point_type = point_type
@@ -34,7 +34,7 @@ class ProjectPoint:
     def get_point_data(self):
         return (self.device_position, self.point_position, self.point_type, self.point_name)
 
-    # Getters
+    # Getters.
     @property
     def point_type(self):
         return self.__point_type

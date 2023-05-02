@@ -2,12 +2,13 @@ from tkinter import ttk, constants, Menu
 
 class MainView:
     # Primary view of the program. User can access other views from this view.
-    def __init__(self, root, handle_add_project_device, handle_new_device, handle_edit_device):
+    def __init__(self, root, handle_add_project_device, handle_new_device, handle_edit_device, project_data_service):
         self._root = root
         self._frame = None
         self._handle_add_project_device = handle_add_project_device
         self._handle_new_device = handle_new_device
         self._handle_edit_device = handle_edit_device
+        self.project_data_service = project_data_service
         self._initialize()
 
     def _initialize(self):
@@ -84,6 +85,21 @@ class MainView:
         self.devices_treeview.grid(row=1, column=1)
 
         self._root.config(menu=self.top_menu)
+
+        self.populate_list()
+
+    # Get device and point data from project data manager and add it to points and devices -lists.
+    def populate_list(self):
+        # Get devices and add to list.
+        devices = self.project_data_service.get_device_list()
+        for device_position, device in devices:
+            self.devices_treeview.insert("","end",values=(device_position,device.model,device.manufacturer))
+
+        # Get points and add to list.
+        points = self.project_data_service.get_point_list()
+        for device_position, device_points in points:
+            for point in device_points:
+                self.points_treeview.insert("","end",values=(device_position, point.point_position, self.point_type, self.point_name))
 
     def destroy(self):
         self._frame.destroy()

@@ -2,6 +2,7 @@ import os
 import sys
 from repository.device_repository import DeviceRepository
 from tkinter import ttk, constants
+from services.project_data_service import ProjectDataService
 
 sys.path.insert(0, os.path.abspath(".."))
 
@@ -64,7 +65,7 @@ class NewDevice:
         point2 = self.device_point_name_field2.get()
         point3 = self.device_point_name_field3.get()
         point4 = self.device_point_name_field4.get()
-        
+
         # Check that at least minimum information is given.
         if name == "" or point1 == "" :
             return

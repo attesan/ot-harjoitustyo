@@ -8,7 +8,8 @@ class ProjectDevice:
             device_type:str,
             device_points:list,
             device_position:str,
-            point_name_separator:str = "_"):
+            device_manufacturer:str,
+            point_name_separator:str = "_",):
 
         self.__type = device_type
 
@@ -20,6 +21,7 @@ class ProjectDevice:
 
         self.__position = device_position
         self.__separator = point_name_separator
+        self.__manufacturer = device_manufacturer
 
     # Make sure given data is in correct form
     def __check_valid(self, data:str):
@@ -56,6 +58,10 @@ class ProjectDevice:
     @property
     def position(self):
         return self.__position
+
+    @property
+    def manufacturer(self):
+        return self.__manufacturer
 
     # Setter methods for changing data
     @position.setter

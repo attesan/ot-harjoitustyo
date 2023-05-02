@@ -6,9 +6,10 @@ from ui.edit_device import EditDevice
 
 class UI:
     # This class handles the UI
-    def __init__(self, root):
+    def __init__(self, root, project_data_service):
         self.root = root
         self._current_view = None
+        self.project_data_service = project_data_service
 
     def start(self):
         self._show_main_window()
@@ -34,12 +35,12 @@ class UI:
     # Methods for showing different windows
     def _show_main_window(self):
         self._hide_view()
-        self._current_view = MainView(self.root, self._handle_add_project_device, self._handle_new_device, self._handle_edit_device)
+        self._current_view = MainView(self.root, self._handle_add_project_device, self._handle_new_device, self._handle_edit_device, self.project_data_service)
         self._current_view.pack()
 
     def _show_add_project_device(self):
         self._hide_view()
-        self._current_view = AddProjectDevice(self.root, self._handle_main_window)
+        self._current_view = AddProjectDevice(self.root, self._handle_main_window, self.project_data_service)
         self._current_view.pack()
 
     def _show_new_device(self):
