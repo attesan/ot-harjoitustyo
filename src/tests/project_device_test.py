@@ -7,8 +7,8 @@ sys.path.insert(0, os.path.abspath(".."))
 
 class TestProjectDevice(unittest.TestCase):
     def setUp(self):
-        self.device = ProjectDevice("AC", ["TE1", "TE2", "TE3", "TE4"], "AC1")
-        self.device2 = ProjectDevice("AC", ["TE1"], "AC1", ".")
+        self.device = ProjectDevice("AC", ["TE1", "TE2", "TE3", "TE4"], "AC1", "MMM")
+        self.device2 = ProjectDevice("AC", ["TE1"], "AC1", "MMM", ".")
 
     def test_device_points_created_correctly(self):
         self.assertEqual(len(self.device.points), 4)
