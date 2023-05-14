@@ -21,3 +21,7 @@ class TestProjectDeviceMaker(unittest.TestCase):
     def test_make_device_return_type(self):
         result = self.d.make_project_device("a",1)
         self.assertEqual(result.__class__,ProjectDevice("","","","").__class__)
+
+    def test_make_device_device_points(self):
+        result = self.d.make_project_device("a",1)
+        self.assertEqual(len(result.get_points()),4)
