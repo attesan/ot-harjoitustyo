@@ -116,7 +116,7 @@ class MainView:
         self.populate_list()
 
     def remove_device_and_points(self):
-        """Get data from list and update list after removal."""
+        """Get data from list and update list after data removal."""
         device = self.devices_treeview.focus()
         device = self.devices_treeview.item(device)
         data = device["values"]

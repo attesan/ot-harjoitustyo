@@ -67,6 +67,9 @@ class ProjectDataService:
 
     def get_csv(self):
         """For getting project data in csv friendly format.
+
+        Return:
+            data: Return all device data and related point data as list.
         """
         data = []
         for device in self.__devices.values():

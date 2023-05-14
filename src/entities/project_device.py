@@ -124,6 +124,9 @@ class ProjectDevice:
 
     def to_csv(self):
         """For getting device and its points in csv friendly form.
+
+        Return:
+            data: list that contains all device data and related points.
         """
         point_csv = []
         for point in self.__points:

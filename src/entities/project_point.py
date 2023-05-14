@@ -129,6 +129,9 @@ class ProjectPoint:
 
     def to_csv(self):
         """For getting point data in csv form.
+
+        Return:
+            data: Point name. No other data is added because it is included in point name.
         """
 
         data = str(self.__point_name)
