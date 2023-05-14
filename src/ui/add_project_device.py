@@ -1,6 +1,6 @@
 import os
 import sys
-from tkinter import ttk, constants
+from tkinter import ttk, constants, messagebox
 from repository.device_repository import DeviceRepository
 from services.project_device_maker import ProjectDeviceMaker
 
@@ -93,14 +93,21 @@ class AddProjectDevice:
         data = device["values"]
         # Make sure something is selected.
         if data == "":
+            messagebox.showinfo("Virhe:", "Valitse ensin lisättävä laite listasta.")
             return
 
         device_position = self._device_position.get()
+        if device_position == "":
+            messagebox.showinfo("Virhe:", "Anna valitulle laitteelle positio.")
+            return
+
 
         device_maker = ProjectDeviceMaker()
         new_project_device = device_maker.make_project_device(device_position,data[0])
         
-        self.project_data_service.add_device(new_project_device)
+        result = self.project_data_service.add_device(new_project_device)
+        if result == False:
+            messagebox.showinfo("Virhe:", "Laitepositio on varattu.\n Anna uniikki laitepositio.")
 
     def destroy(self):
         """For destroying the current view frame.

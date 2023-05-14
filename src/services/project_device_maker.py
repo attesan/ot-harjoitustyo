@@ -31,7 +31,8 @@ class ProjectDeviceMaker:
         point_positions = []
 
         for row in data[1]:
-            point_positions.append(row[2])
+            if row[0] != "":
+                point_positions.append(row[0])
 
         new_project_device = ProjectDevice(data[0][1],point_positions,device_position,data[0][2])
         return new_project_device

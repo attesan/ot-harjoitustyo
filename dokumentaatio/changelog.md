@@ -1,3 +1,13 @@
+# Viikko 8  
+Lisätty käyttäjälle hyödyllisiä virheilmoituksia jos toiminto epäonnistuu.  
+Lisätty projektin tallennus excel ystävälliseen CSV tiedostoon.  
+Lisätty tiedoston tallennusikkuna päänäyttön pudotusvalikkoon.  
+Korjattu pääikkunan projektin laite ja pistelista. Näyttää nyt projektin laitteet oikein.  
+Korjattu pisteen tietojen hakua tietokannasta. Piste nimi haetaan nyt oikeasta haun indeksistä.  
+Käyttäjä voi nyt lisätä vain yhden laitteen laitepositiota kohden.  
+Käyttäjä voi nyt poistaa laitteen projektista ja pääikkunan listat päivittyvät näyttämään sen.  
+Poistettu käyttämätöntä koodia.  
+  
 # Viikko 7  
 Lisätty palvelu luokka projektin datalle.  
 Lisätty palvelu entity.project_device -olioiden luonnille.  

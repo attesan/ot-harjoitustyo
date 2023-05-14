@@ -40,7 +40,6 @@ class ProjectDevice:
         self.__separator = point_name_separator
         self.__manufacturer = device_manufacturer
 
-
     def __check_valid(self, data:str):
         """Make sure given data only contains allowed characters.
 
@@ -124,5 +123,17 @@ class ProjectDevice:
             self.__update_point_names()
 
     def to_csv(self):
-        """For saving as csv.
+        """For getting device and its points in csv friendly form.
         """
+        point_csv = []
+        for point in self.__points:
+            point_csv.append("pointnames:,")
+            point_csv.append(point.to_csv())
+
+        data = [self.__type,
+                self.__manufacturer,
+                self.__position,
+                self.__separator]
+        data += point_csv
+
+        return data

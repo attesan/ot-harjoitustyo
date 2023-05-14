@@ -126,3 +126,10 @@ class ProjectPoint:
         if self.__check_valid(device_position):
             self.__device_position = device_position
             self.__point_name = self.__compose_point_name()
+
+    def to_csv(self):
+        """For getting point data in csv form.
+        """
+
+        data = str(self.__point_name)
+        return data

@@ -1,7 +1,7 @@
 import os
 import sys
 from repository.device_repository import DeviceRepository
-from tkinter import ttk, constants
+from tkinter import ttk, constants, messagebox
 from services.project_data_service import ProjectDataService
 
 sys.path.insert(0, os.path.abspath(".."))
@@ -85,7 +85,9 @@ class NewDevice:
 
         # Check that at least minimum information is given.
         if name == "" or point1 == "" :
+            messagebox.showinfo("Virhe:", "Anna lisättävälle laitteelle vähintään laitteen nimi ja piste 1:n nimi.")
             return
+
         self._devices.new_device(name, manufacturer, [(point1,),(point2,),(point3,),(point4,)])
 
     def destroy(self):

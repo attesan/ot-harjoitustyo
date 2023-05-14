@@ -147,10 +147,6 @@ class DeviceRepository:
 
         self._connection.commit()
 
-    def delete_device(self):
-        """Not implemented yet
-        """
-
     def delete_all(self):
         """Delete everything from all tables
         """
