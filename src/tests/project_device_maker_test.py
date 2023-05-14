@@ -17,3 +17,7 @@ class TestProjectDeviceMaker(unittest.TestCase):
 
     def test_has_device_repository(self):
         self.assertEqual(self.d._devices.__class__,DeviceRepository().__class__)
+
+    def test_make_device_return_type(self):
+        result = self.d.make_project_device("a",1)
+        self.assertEqual(result.__class__,ProjectDevice("","","","").__class__)
