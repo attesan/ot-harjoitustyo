@@ -22,6 +22,10 @@ Tallenna muutokset painamalla Tallenna -painiketta.
   
 Projektiin voi lisätä tietokantaan aiemmin lisättyjä laitteita valitsemalla Lisää -pudotusvalikosta Laite projektiin.  
 Valitse ensin haluamasi laite Laitteet listasta ja paina anna sille positio ikkunan oikean laidan tekstikenttään.  
-Kun olet valinnut laitteen ja antanut sille position, paina Lisää projektiin -painiketta.
+Kun olet valinnut laitteen ja antanut sille position, paina Lisää projektiin -painiketta.  
   
-Laitteet eivät vielä näy pääikkunassa, mutta tämän pitäisi korjaantua ensiviikolla.  
+Projektiin lisätyt laitteet näkyvät nyt pääikkunassa. Ohjelma lisää projektin laitteiden vaatimat pisteet automaattisesti pistelistaan.  
+Voit poistaa projektiin lisättyjä laitteita valitsemalla laitteen laitelistasta ja painamalla päänäkymän "Poista laite projektista" -painiketta.  
+Ohjelma poistaa samalla myös valitsemasi laitteen pisteet pistelistasta.  
+Kun olet lisännyt haluamasi laitteet projektiin, Voit tallentaa sen CSV -muodossa valitsemall "vie csv" Projekti -pudotusvalikosta.  
+Avautuvassa ikkunassa voit valita tallennuspaikan ja tiedostoniemen. Paina lopuksi "Tallenna" -painiketta tallentaaksesi tiedoston.  
