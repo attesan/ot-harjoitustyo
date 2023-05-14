@@ -37,14 +37,14 @@ class FileService:
         data = self._project_data_service.get_csv()
         print("DATA:", data)
 
-        #try:
-        with open(filename, "w") as file: # pylint: disable=unspecified-encoding
-            writer = csv.writer(file, dialect="excel",delimiter=",")
-            writer.writerows(data)
-            file.close()
-        return True
-        #except: # pylint: disable=bare-except
-        #    return False
+        try:
+            with open(filename, "w") as file: # pylint: disable=unspecified-encoding
+                writer = csv.writer(file, dialect="excel",delimiter=",")
+                writer.writerows(data)
+                file.close()
+            return True
+        except: # pylint: disable=bare-except
+            return False
 
     def _check_file_name(self, filename:str):
         """Check given name so it only contains characters that are widely allowed in different
