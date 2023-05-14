@@ -15,7 +15,7 @@ project_device_maker -luokkaa testataan project_device_maker_test-testiluokalla.
 device_repository -luokkaa testataan device_repository_test-testiluokalla.  
   
 #Testauskattavuus  
-Testauskattavuus on 71% mutta se saattaa kasvaa mikäli loppupalautusta ennen ehtii vielä muutaman testin lisäämään.  
+Testauskattavuus on 72%.
 Tällä hetkellä file_service -luokkaa ei testata automaattisesti. Luokan toiminta on testattu manuaalisesti käyttöliittymän kautta.  
 Käyttöliittymän luokat on jätetty automaattisen testauksen ulkopuolelle kurssin vaatimusten seurauksena. Käyttöliittymää on testattu manuaalisesti.  
   
